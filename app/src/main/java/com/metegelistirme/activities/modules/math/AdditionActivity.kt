@@ -52,7 +52,7 @@ class AdditionActivity : AppCompatActivity() {
         binding.tvProgress.text = "Soru: ${questionsAnswered + 1}/$totalQuestions"
 
         val wrongAnswer1 = correctAnswer + Random.nextInt(1, 4)
-        val wrongAnswer2 = correctAnswer - Random.nextInt(1, 4).coerceAtLeast(1)
+        val wrongAnswer2 = (correctAnswer - Random.nextInt(1, 4)).coerceAtLeast(1)
         val answers = listOf(correctAnswer, wrongAnswer1, wrongAnswer2).shuffled()
 
         binding.btnAnswer1.text = answers[0].toString()

@@ -14,8 +14,8 @@ APP_BASE_NAME=$(basename "$0")
 
 # Determine the Java command to use to start the JVM.
 if [ -n "$JAVA_HOME" ] ; then
-    if [ -x "$JAVA_HOME/jre/sh/java" ] ; then
-        JAVACMD="$JAVA_HOME/jre/sh/java"
+    if [ -x "$JAVA_HOME/jre/bin/java" ] ; then
+        JAVACMD="$JAVA_HOME/jre/bin/java"
     else
         JAVACMD="$JAVA_HOME/bin/java"
     fi

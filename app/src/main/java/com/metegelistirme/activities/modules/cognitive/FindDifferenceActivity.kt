@@ -18,7 +18,7 @@ class FindDifferenceActivity : AppCompatActivity() {
     private val puzzles = listOf(
         Puzzle("🍎🍎🍎🍊", "🍎🍎🍎🍎", "🍊", 3),
         Puzzle("🐶🐶🐱🐶", "🐶🐶🐶🐶", "🐱", 2),
-        Puzzle("⭐⭐⭐⭐", "⭐⭐🌟⭐", "🌟", 2),
+        Puzzle("⭐⭐🌟⭐", "⭐⭐⭐⭐", "🌟", 2),
         Puzzle("🔵🔵🔴🔵", "🔵🔵🔵🔵", "🔴", 2),
         Puzzle("😊😊😊😢", "😊😊😊😊", "😢", 3)
     )
