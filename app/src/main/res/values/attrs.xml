@@ -2,6 +2,10 @@
 <resources>
     <!-- Custom attributes for Mete components -->
     
+    <!-- Shared attributes -->
+    <attr name="cornerRadius" format="dimension" />
+    <attr name="elevation" format="dimension" />
+    
     <!-- MeteButton -->
     <declare-styleable name="MeteButton">
         <attr name="buttonType" format="enum">
@@ -16,8 +20,8 @@
             <enum name="medium" value="1" />
             <enum name="large" value="2" />
         </attr>
-        <attr name="cornerRadius" format="dimension" />
-        <attr name="elevation" format="dimension" />
+        <attr name="cornerRadius" />
+        <attr name="elevation" />
         <attr name="iconPadding" format="dimension" />
     </declare-styleable>
     
@@ -28,8 +32,8 @@
             <enum name="highlighted" value="1" />
             <enum name="interactive" value="2" />
         </attr>
-        <attr name="cornerRadius" format="dimension" />
-        <attr name="elevation" format="dimension" />
+        <attr name="cornerRadius" />
+        <attr name="elevation" />
         <attr name="padding" format="dimension" />
     </declare-styleable>
     
