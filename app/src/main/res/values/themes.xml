@@ -20,7 +20,8 @@
         <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
         
         <!-- Typography -->
-        <item name="android:fontFamily">@font/kids_font</item>
+        <!-- TODO: Add kids_font to res/font/ directory -->
+        <!-- <item name="android:fontFamily">@font/kids_font</item> -->
         
         <!-- Button styles -->
         <item name="materialButtonStyle">@style/Widget.MeteEgitimUygulamasi.Button</item>
