@@ -121,3 +121,4 @@ class SettingsActivity : AppCompatActivity() {
             .setNegativeButton("Hayır", null)
             .show()
     }
+}

@@ -10,11 +10,20 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface ProgressDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(progress: ProgressEntity): Long
+    suspend fun insertProgress(progress: ProgressEntity): Long
 
     @Query("SELECT * FROM progress ORDER BY timestamp DESC")
-    fun getAll(): Flow<List<ProgressEntity>>
+    fun getAllProgress(): Flow<List<ProgressEntity>>
+
+    @Query("SELECT * FROM progress WHERE moduleId = :moduleId LIMIT 1")
+    suspend fun getProgressByModule(moduleId: String): ProgressEntity?
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun updateProgress(progress: ProgressEntity)
+
+    @Query("DELETE FROM progress WHERE moduleId = :moduleId")
+    suspend fun deleteProgress(moduleId: String)
 
     @Query("DELETE FROM progress")
-    suspend fun clearAll()
+    suspend fun deleteAllProgress()
 }

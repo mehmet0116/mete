@@ -2,10 +2,9 @@ package com.metegelistirme.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import androidx.lifecycle.viewmodel.compose.viewModel
+import com.metegelistirme.database.entities.ProgressEntity
 import com.metegelistirme.repository.EducationRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import timber.log.Timber
@@ -28,94 +27,44 @@ class MainViewModel @Inject constructor(
     private val _errorMessage = MutableStateFlow<String?>(null)
     val errorMessage: StateFlow<String?> = _errorMessage.asStateFlow()
     
-    // Cache for frequently accessed data
-    private val moduleCache = mutableMapOf<String, LearningModule>()
-    private var cacheJob: Job? = null
-    
     init {
-        // Preload data on initialization
-        preloadEssentialData()
-        
-        // Setup error handling
-        setupErrorHandling()
+        loadProgress()
     }
     
-    private fun preloadEssentialData() {
+    private fun loadProgress() {
         viewModelScope.launch {
             _isLoading.value = true
             try {
-                // Preload learning modules
-                repository.getAllLearningModules()
-                    .firstOrNull()
-                    ?.forEach { module ->
-                        moduleCache[module.id] = module
-                        
-                        // Preload audio resources for first module
-                        if (module.order == 1) {
-                            repository.preloadAudioResources(module.id)
-                        }
+                repository.getAllProgress()
+                    .catch { error ->
+                        Timber.e(error, "Error loading progress")
+                        _errorMessage.value = "İlerleme yüklenirken hata oluştu"
                     }
-                
-                Timber.d("Preloaded ${moduleCache.size} modules")
-                _uiState.value = _uiState.value.copy(
-                    modulesLoaded = true
-                )
-            } catch (e: Exception) {
-                Timber.e(e, "Error preloading data")
-                _errorMessage.value = "Veriler yüklenirken hata oluştu"
+                    .collect { progressList ->
+                        _uiState.value = _uiState.value.copy(
+                            progressLoaded = true,
+                            totalProgress = progressList.size
+                        )
+                    }
             } finally {
                 _isLoading.value = false
             }
         }
     }
     
-    fun getLearningModules(): Flow<List<LearningModule>> {
-        return repository.getAllLearningModules()
-            .onEach { modules ->
-                // Update cache
-                modules.forEach { module ->
-                    moduleCache[module.id] = module
-                }
-            }
-            .catch { error ->
-                Timber.e(error, "Error fetching learning modules")
-                _errorMessage.value = "Modüller yüklenirken hata oluştu"
-                emit(emptyList())
-            }
-    }
-    
-    fun getCachedModule(moduleId: String): LearningModule? {
-        return moduleCache[moduleId]
-    }
-    
-    fun saveGameScore(gameType: String, score: Int, userId: String) {
+    fun saveProgress(moduleId: String, progress: Int) {
         viewModelScope.launch {
             try {
-                val gameScore = GameScore(
-                    gameType = gameType,
-                    score = score,
-                    userId = userId,
+                val progressEntity = ProgressEntity(
+                    moduleId = moduleId,
+                    progress = progress,
                     timestamp = System.currentTimeMillis()
                 )
-                
-                repository.saveGameScore(gameScore)
-                
-                // Check for achievements
-                checkAchievements(userId, gameType, score)
-                
+                repository.saveProgress(progressEntity)
+                Timber.d("Progress saved for module: $moduleId")
             } catch (e: Exception) {
-                Timber.e(e, "Error saving game score")
-                _errorMessage.value = "Skor kaydedilirken hata oluştu"
-            }
-        }
-    }
-    
-    private fun checkAchievements(userId: String, gameType: String, score: Int) {
-        viewModelScope.launch {
-            // Implement achievement checking logic
-            // Example: If score > 100, unlock achievement
-            if (score > 100) {
-                repository.unlockAchievement("high_score_$gameType", userId)
+                Timber.e(e, "Error saving progress")
+                _errorMessage.value = "İlerleme kaydedilirken hata oluştu"
             }
         }
     }
@@ -124,34 +73,13 @@ class MainViewModel @Inject constructor(
         _errorMessage.value = null
     }
     
-    private fun setupErrorHandling() {
-        viewModelScope.launch {
-            errorMessage.collect { error ->
-                if (error != null) {
-                    // Log error to analytics
-                    Timber.e("UI Error: $error")
-                    
-                    // Auto-clear error after 5 seconds
-                    launch {
-                        kotlinx.coroutines.delay(5000)
-                        if (_errorMessage.value == error) {
-                            clearError()
-                        }
-                    }
-                }
-            }
-        }
-    }
-    
     override fun onCleared() {
         super.onCleared()
-        cacheJob?.cancel()
-        moduleCache.clear()
+        Timber.d("MainViewModel cleared")
     }
-    
-    data class MainUiState(
-        val modulesLoaded: Boolean = false,
-        val currentModule: String? = null,
-        val userProgress: Int = 0
-    )
 }
+
+data class MainUiState(
+    val progressLoaded: Boolean = false,
+    val totalProgress: Int = 0
+)

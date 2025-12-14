@@ -14,34 +14,20 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import timber.log.Timber
-import javax.inject.Singleton
 
 @Database(
     entities = [
-        UserProgress::class,
-        GameScore::class,
-        LearningModule::class,
-        AudioResource::class,
-        ImageResource::class,
-        Achievement::class,
-        ChildProfile::class
+        ProgressEntity::class,
+        DummyEntity::class
     ],
     version = 1,
-    exportSchema = true,
-    autoMigrations = []
+    exportSchema = false
 )
 @TypeConverters(DateConverter::class, ListConverter::class)
-@Singleton
 abstract class AppDatabase : RoomDatabase() {
     
-    abstract fun userProgressDao(): UserProgressDao
-    abstract fun gameScoreDao(): GameScoreDao
-    abstract fun learningModuleDao(): LearningModuleDao
-    abstract fun audioResourceDao(): AudioResourceDao
-    abstract fun imageResourceDao(): ImageResourceDao
-    abstract fun achievementDao(): AchievementDao
-    abstract fun childProfileDao(): ChildProfileDao
-    
+    abstract fun progressDao(): ProgressDao
+
     companion object {
         @Volatile
         private var INSTANCE: AppDatabase? = null
@@ -60,10 +46,8 @@ abstract class AppDatabase : RoomDatabase() {
                         command.run()
                     }
                 }
-                .setQueryCoroutineContext(Dispatchers.IO)
                 .enableMultiInstanceInvalidation()
                 .setJournalMode(JournalMode.TRUNCATE)
-                .addMigrations() // Add migrations here when needed
                 .build()
                 
                 INSTANCE = instance

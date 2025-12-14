@@ -3,7 +3,7 @@ package com.metegelistirme
 import android.app.Application
 import android.content.Context
 import androidx.datastore.preferences.preferencesDataStore
-import com.metegelistirme.di.AppModule
+import com.metegelistirme.database.AppDatabase
 import dagger.hilt.android.HiltAndroidApp
 import timber.log.Timber
 

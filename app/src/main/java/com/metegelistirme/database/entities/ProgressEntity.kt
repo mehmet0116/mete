@@ -5,10 +5,13 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "progress")
 data class ProgressEntity(
-    @PrimaryKey(autoGenerate = true) val id: Long = 0,
-    val childName: String,
-    val module: String,
-    val level: Int,
-    val score: Int,
-    val timestamp: Long
+    val moduleId: String,
+    val progress: Int,
+    val timestamp: Long,
+    @PrimaryKey(autoGenerate = true)
+    val id: Long = 0,
+    val childName: String = "",
+    val module: String = "",
+    val level: Int = 0,
+    val score: Int = 0
 )
