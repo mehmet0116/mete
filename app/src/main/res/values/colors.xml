@@ -22,4 +22,7 @@
     <color name="success_green">#4CAF50</color>
     <color name="warning_orange">#FF9800</color>
     <color name="error_red">#F44336</color>
+
+    <!-- Launcher Icon -->
+    <color name="ic_launcher_background">#4FC3F7</color>
 </resources>

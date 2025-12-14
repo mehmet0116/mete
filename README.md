@@ -30,49 +30,30 @@ Temalı arka planlar (doğa, uzay, hayvanat bahçesi vb.)
 
 📚 Eğitim Modülleri
 1. Dil Gelişimi
-Türkçe harf ve kelime öğrenme
-
-İngilizce temel kelimeler
-
-Sesli hikaye kitapları
-
-Telaffuz alıştırmaları
-
+   - Türkçe harf ve kelime öğrenme
+   - İngilizce temel kelimeler
+   - Sesli hikaye kitapları
+   - Telaffuz alıştırmaları
 2. Matematik Becerileri
-Sayı sayma (1-20)
-
-Basit toplama-çıkarma
-
-Şekil ve desen tanıma
-
-Ölçü ve karşılaştırma
-
+   - Sayı sayma (1-20)
+   - Basit toplama-çıkarma
+   - Şekil ve desen tanıma
+   - Ölçü ve karşılaştırma
 3. Bilişsel Gelişim
-Hafıza oyunları
-
-Eşleştirme kartları
-
-Sıralama ve gruplama
-
-Mantık bulmacaları
-
+   - Hafıza oyunları
+   - Eşleştirme kartları
+   - Sıralama ve gruplama
+   - Mantık bulmacaları
 4. Yaratıcılık
-Boyama sayfaları
-
-Müzik aletleri (sanal)
-
-Basit çizim araçları
-
-Ses efektleri oluşturma
-
+   - Boyama sayfaları
+   - Müzik aletleri (sanal)
+   - Basit çizim araçları
+   - Ses efektleri oluşturma
 5. Günlük Yaşam Becerileri
-Renkler ve şekiller
-
-Hayvanlar ve sesleri
-
-Meslekler
-
-Trafik işaretleri
+   - Renkler ve şekiller
+   - Hayvanlar ve sesleri
+   - Meslekler
+   - Trafik işaretleri
 
 🎮 Oyun Türleri
 Boşluk doldurma
@@ -268,57 +249,35 @@ dependencies {
 
 🎯 Ek Özellik Fikirleri
 1. Mete'nin Günlüğü
-Günlük aktivite takvimi
-
-Yapılan etkinliklerin kaydı
-
-Gelişim grafikleri
-
+   - Günlük aktivite takvimi
+   - Yapılan etkinliklerin kaydı
+   - Gelişim grafikleri
 2. Ebeveyn İzleme Paneli
-Çocuğun ilerleme raporu
-
-Hangi alanlarda iyi/iyileştirilmeli
-
-Oyun süresi sınırlaması
-
-Gece modu otomatik açma
-
+   - Çocuğun ilerleme raporu
+   - Hangi alanlarda iyi/iyileştirilmeli
+   - Oyun süresi sınırlaması
+   - Gece modu otomatik açma
 3. Ödül Sistemi
-Yıldızlar ve kupalar
-
-Başarı rozetleri
-
-Sanal çıkartma koleksiyonu
-
-Özel karakter kostümleri
-
+   - Yıldızlar ve kupalar
+   - Başarı rozetleri
+   - Sanal çıkartma koleksiyonu
+   - Özel karakter kostümleri
 4. Çoklu Profil
-Birden fazla çocuk için profil
-
-Yaşa göre içerik ayarlama
-
-Bireysel ilerleme takibi
-
+   - Birden fazla çocuk için profil
+   - Yaşa göre içerik ayarlama
+   - Bireysel ilerleme takibi
 5. Haftalık Zorluklar
-Haftalık özel görevler
-
-Temalı etkinlik haftaları
-
-Özel ödüller
-
+   - Haftalık özel görevler
+   - Temalı etkinlik haftaları
+   - Özel ödüller
 6. Sosyal Duygusal Öğrenme
-Duygu ifadeleri öğrenme
-
-Empati geliştirme oyunları
-
-Sosyal durum senaryoları
-
+   - Duygu ifadeleri öğrenme
+   - Empati geliştirme oyunları
+   - Sosyal durum senaryoları
 7. Fiziksel Aktivite Entegrasyonu
-Basit yoga hareketleri
-
-Ritim tutma oyunları
-
-El-göz koordinasyonu
+   - Basit yoga hareketleri
+   - Ritim tutma oyunları
+   - El-göz koordinasyonu
 
 🔒 Güvenlik ve Gizlilik
 Veri Koruma

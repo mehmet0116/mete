@@ -2,41 +2,36 @@ package com.metegelistirme.activities
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import com.metegelistirme.R
+import com.metegelistirme.databinding.ActivityMainMenuBinding
 
 class MainMenuActivity : AppCompatActivity() {
-    
+
+    private lateinit var binding: ActivityMainMenuBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main_menu)
-        
-        // Butonları bul
-        val btnEducation = findViewById<Button>(R.id.btn_education)
-        val btnGames = findViewById<Button>(R.id.btn_games)
-        val btnSettings = findViewById<Button>(R.id.btn_settings)
-        val btnParent = findViewById<Button>(R.id.btn_parent)
-        
-        // Buton tıklama olayları
-        btnEducation.setOnClickListener {
-            val intent = Intent(this, EducationActivity::class.java)
-            startActivity(intent)
+        binding = ActivityMainMenuBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        setupClickListeners()
+    }
+
+    private fun setupClickListeners() {
+        binding.btnEducation.setOnClickListener {
+            startActivity(Intent(this, EducationActivity::class.java))
         }
-        
-        btnGames.setOnClickListener {
-            val intent = Intent(this, GamesActivity::class.java)
-            startActivity(intent)
+
+        binding.btnGames.setOnClickListener {
+            startActivity(Intent(this, GamesActivity::class.java))
         }
-        
-        btnSettings.setOnClickListener {
-            val intent = Intent(this, SettingsActivity::class.java)
-            startActivity(intent)
+
+        binding.btnSettings.setOnClickListener {
+            startActivity(Intent(this, SettingsActivity::class.java))
         }
-        
-        btnParent.setOnClickListener {
-            val intent = Intent(this, ParentActivity::class.java)
-            startActivity(intent)
+
+        binding.btnParent.setOnClickListener {
+            startActivity(Intent(this, ParentActivity::class.java))
         }
     }
 }

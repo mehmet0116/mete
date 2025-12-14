@@ -21,8 +21,9 @@
     
     <!-- Splash Screen Theme -->
     <style name="Theme.MeteEgitimUygulamasi.Splash" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="android:windowBackground">@drawable/splash_background</item>
+        <item name="android:windowBackground">@color/primary_color</item>
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowContentOverlay">@null</item>
+        <item name="android:statusBarColor">@color/primary_color</item>
     </style>
 </resources>
