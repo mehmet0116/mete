@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.metegelistirme.R
 import com.metegelistirme.activities.modules.LanguageModuleActivity
+import com.metegelistirme.activities.modules.MathModuleActivity
 import com.metegelistirme.adapters.EducationAdapter
 import com.metegelistirme.databinding.ActivityEducationBinding
 import com.metegelistirme.models.EducationModule
@@ -94,10 +95,7 @@ class EducationActivity : AppCompatActivity() {
     private fun navigateToModule(module: EducationModule) {
         val intent = when (module.moduleType) {
             ModuleType.LANGUAGE -> Intent(this, LanguageModuleActivity::class.java)
-            ModuleType.MATH -> {
-                showComingSoonMessage()
-                return
-            }
+            ModuleType.MATH -> Intent(this, MathModuleActivity::class.java)
             ModuleType.COGNITIVE -> {
                 showComingSoonMessage()
                 return

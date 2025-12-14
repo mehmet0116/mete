@@ -1,10 +1,12 @@
 package com.metegelistirme.activities.modules
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.card.MaterialCardView
 import com.metegelistirme.R
+import com.metegelistirme.activities.modules.language.AlphabetLearningActivity
 
 class LanguageModuleActivity : AppCompatActivity() {
 
@@ -28,8 +30,7 @@ class LanguageModuleActivity : AppCompatActivity() {
     private fun setupLessons() {
         // Alfabe Dersi
         findViewById<MaterialCardView>(R.id.cardAlphabet).setOnClickListener {
-            Toast.makeText(this, "🔤 Alfabe öğreniyoruz!", Toast.LENGTH_SHORT).show()
-            // TODO: Alfabe oyunu başlat
+            startActivity(Intent(this, AlphabetLearningActivity::class.java))
         }
 
         // Kelime Öğrenme

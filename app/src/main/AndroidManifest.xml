@@ -58,6 +58,36 @@
             android:exported="false"
             android:screenOrientation="portrait" />
 
+        <activity
+            android:name=".activities.modules.MathModuleActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activities.modules.language.AlphabetLearningActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activities.modules.math.CountingActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activities.modules.math.AdditionActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activities.modules.math.SubtractionActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activities.modules.math.ShapesActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
         <!-- Oyunlar -->
         <activity
             android:name=".activities.games.MatchingGameActivity"
