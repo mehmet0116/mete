@@ -19,6 +19,12 @@
     <color name="text_primary_dark">#FFFFFF</color>
     <color name="text_secondary_dark">#B0B0B0</color>
     
+    <!-- Surface colors for Material 3 -->
+    <color name="on_surface_light">#1C1B1F</color>
+    <color name="on_surface_dark">#E6E1E5</color>
+    <color name="primary_dark_mode">#0288D1</color>
+    <color name="secondary_dark_mode">#F57C00</color>
+    
     <!-- Ortak renkler -->
     <color name="success_green">#4CAF50</color>
     <color name="warning_orange">#FF9800</color>
