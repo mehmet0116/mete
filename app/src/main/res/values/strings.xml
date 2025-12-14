@@ -1,53 +1,62 @@
 <resources>
-    <string name="app_name">Mete Eğitici Çocuk</string>
+    <!-- Uygulama adı -->
+    <string name="app_name">Mete Eğitim Uygulaması</string>
     
-    <!-- Splash Screen -->
-    <string name="splash_title">Mete\'ye Hoş Geldin!</string>
+    <!-- Karşılama ekranı -->
+    <string name="welcome_title">Mete\'ye Hoş Geldin!</string>
+    <string name="welcome_subtitle">Eğlenceli öğrenme macerası başlıyor</string>
+    <string name="loading">Yükleniyor...</string>
     
-    <!-- Main Menu -->
+    <!-- Ana menü -->
     <string name="main_menu_title">Ana Menü</string>
-    <string name="btn_education">Eğitim</string>
-    <string name="btn_games">Oyunlar</string>
-    <string name="btn_settings">Ayarlar</string>
-    <string name="btn_parent">Ebeveyn</string>
+    <string name="education_button">Eğitim Modülleri</string>
+    <string name="games_button">Oyunlar</string>
+    <string name="settings_button">Ayarlar</string>
+    <string name="parent_button">Ebeveyn Paneli</string>
     
-    <!-- Education Module -->
-    <string name="education_title">Eğitim Modülleri</string>
-    <string name="language_development">Dil Gelişimi</string>
-    <string name="math_skills">Matematik</string>
-    <string name="cognitive_development">Bilişsel Gelişim</string>
-    <string name="creativity">Yaratıcılık</string>
-    <string name="life_skills">Yaşam Becerileri</string>
+    <!-- Eğitim modülleri -->
+    <string name="language_module">Dil Gelişimi</string>
+    <string name="math_module">Matematik</string>
+    <string name="cognitive_module">Bilişsel Gelişim</string>
+    <string name="creativity_module">Yaratıcılık</string>
+    <string name="life_skills_module">Günlük Yaşam</string>
     
-    <!-- Games Module -->
-    <string name="games_title">Oyunlar</string>
-    <string name="matching_game">Eşleştirme</string>
+    <!-- Oyunlar -->
+    <string name="matching_game">Eşleştirme Oyunu</string>
     <string name="puzzle_game">Puzzle</string>
     <string name="memory_game">Hafıza Oyunu</string>
     <string name="quiz_game">Sesli Quiz</string>
     
-    <!-- Settings -->
+    <!-- Ayarlar -->
     <string name="settings_title">Ayarlar</string>
     <string name="sound_settings">Ses Ayarları</string>
-    <string name="theme_settings">Tema</string>
-    <string name="language_settings">Dil</string>
+    <string name="background_music">Arka Plan Müziği</string>
+    <string name="sound_effects">Efekt Sesleri</string>
+    <string name="dark_mode">Karanlık Mod</string>
+    <string name="language_settings">Dil Ayarları</string>
     
-    <!-- Parent Controls -->
-    <string name="parent_title">Ebeveyn Kontrolleri</string>
-    <string name="progress_tracking">İlerleme Takibi</string>
-    <string name="time_limits">Süre Sınırlamaları</string>
-    <string name="reports">Raporlar</string>
+    <!-- Ebeveyn paneli -->
+    <string name="parent_panel_title">Ebeveyn Paneli</string>
+    <string name="progress_report">İlerleme Raporu</string>
+    <string name="time_limit">Süre Sınırlaması</string>
+    <string name="achievements">Başarılar</string>
     
-    <!-- Common -->
-    <string name="back">Geri</string>
-    <string name="next">İleri</string>
-    <string name="start">Başla</string>
-    <string name="pause">Duraklat</string>
-    <string name="resume">Devam Et</string>
-    <string name="exit">Çıkış</string>
+    <!-- Ses mesajları -->
+    <string name="sound_great_job">Harikasın!</string>
+    <string name="sound_well_done">Aferin!</string>
+    <string name="sound_try_again">Bir daha deneyelim</string>
+    <string name="sound_you_can_do_it">Başarabilirsin!</string>
     
-    <!-- Feedback Messages -->
-    <string name="great_job">Harikasın!</string>
-    <string name="try_again">Bir daha deneyelim</string>
-    <string name="you_can_do_it">Başarabilirsin!</string>
+    <!-- Buton metinleri -->
+    <string name="start_button">Başla</string>
+    <string name="continue_button">Devam Et</string>
+    <string name="back_button">Geri</string>
+    <string name="next_button">İleri</string>
+    <string name="finish_button">Bitir</string>
+    <string name="restart_button">Yeniden Başlat</string>
+    
+    <!-- Hata mesajları -->
+    <string name="error_loading">İçerik yüklenirken hata oluştu</string>
+    <string name="error_no_internet">İnternet bağlantısı yok</string>
+    <string name="error_try_again">Lütfen tekrar deneyin</string>
 </resources>

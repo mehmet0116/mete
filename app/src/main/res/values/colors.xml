@@ -5,24 +5,28 @@
     <color name="secondary_color">#FFB74D</color>
     <color name="accent_color">#FF4081</color>
     <color name="background_light">#FFFFFF</color>
-    <color name="text_light">#212121</color>
-    <color name="card_background">#F5F5F5</color>
+    <color name="surface_light">#F5F5F5</color>
+    <color name="text_primary_light">#212121</color>
+    <color name="text_secondary_light">#757575</color>
     
     <!-- Karanlık Mod -->
     <color name="primary_dark">#0288D1</color>
     <color name="secondary_dark">#F57C00</color>
     <color name="accent_dark">#FF80AB</color>
     <color name="background_dark">#121212</color>
-    <color name="text_dark">#FFFFFF</color>
-    <color name="card_background_dark">#1E1E1E</color>
+    <color name="surface_dark">#1E1E1E</color>
+    <color name="text_primary_dark">#FFFFFF</color>
+    <color name="text_secondary_dark">#B0B0B0</color>
     
     <!-- Ortak renkler -->
-    <color name="white">#FFFFFF</color>
-    <color name="black">#000000</color>
     <color name="success_green">#4CAF50</color>
     <color name="warning_orange">#FF9800</color>
     <color name="error_red">#F44336</color>
-
-    <!-- Launcher Icon -->
-    <color name="ic_launcher_background">#4FC3F7</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    
+    <!-- Gradyan renkleri -->
+    <color name="gradient_start">#4FC3F7</color>
+    <color name="gradient_middle">#29B6F6</color>
+    <color name="gradient_end">#0288D1</color>
 </resources>

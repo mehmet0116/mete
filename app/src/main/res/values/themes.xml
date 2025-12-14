@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Theme.MeteEgitimUygulamasi" parent="Theme.MaterialComponents.DayNight.NoActionBar">
@@ -16,14 +17,62 @@
         
         <!-- Customize your theme here. -->
         <item name="android:windowBackground">@color/background_light</item>
-        <item name="android:textColor">@color/text_light</item>
+        <item name="android:textColorPrimary">@color/text_primary_light</item>
+        <item name="android:textColorSecondary">@color/text_secondary_light</item>
+        
+        <!-- Button styles -->
+        <item name="materialButtonStyle">@style/Widget.MeteEgitimUygulamasi.Button</item>
+        <item name="buttonStyle">@style/Widget.MeteEgitimUygulamasi.Button</item>
+        
+        <!-- Font -->
+        <item name="android:fontFamily">@font/kids_font</item>
+        
+        <!-- Corner radius -->
+        <item name="cornerRadius">16dp</item>
     </style>
-    
-    <!-- Splash Screen Theme -->
+
+    <!-- Splash screen theme -->
     <style name="Theme.MeteEgitimUygulamasi.Splash" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="android:windowBackground">@color/primary_color</item>
+        <item name="android:windowBackground">@drawable/splash_background</item>
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowContentOverlay">@null</item>
-        <item name="android:statusBarColor">@color/primary_color</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <!-- Button style -->
+    <style name="Widget.MeteEgitimUygulamasi.Button" parent="Widget.MaterialComponents.Button">
+        <item name="android:minHeight">56dp</item>
+        <item name="android:paddingHorizontal">24dp</item>
+        <item name="cornerRadius">28dp</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.05</item>
+    </style>
+
+    <!-- Card style -->
+    <style name="Widget.MeteEgitimUygulamasi.Card" parent="Widget.MaterialComponents.CardView">
+        <item name="cardCornerRadius">20dp</item>
+        <item name="cardElevation">8dp</item>
+        <item name="cardUseCompatPadding">true</item>
+    </style>
+
+    <!-- Text style for kids -->
+    <style name="TextAppearance.MeteEgitimUygulamasi.Title" parent="TextAppearance.MaterialComponents.Headline5">
+        <item name="android:textSize">32sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.1</item>
+        <item name="android:textColor">@color/primary_color</item>
+    </style>
+
+    <style name="TextAppearance.MeteEgitimUygulamasi.Subtitle" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/text_secondary_light</item>
+    </style>
+
+    <style name="TextAppearance.MeteEgitimUygulamasi.ButtonText" parent="TextAppearance.MaterialComponents.Button">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
     </style>
 </resources>

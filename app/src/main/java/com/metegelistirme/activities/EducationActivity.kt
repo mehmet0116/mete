@@ -1,59 +1,90 @@
 package com.metegelistirme.activities
 
 import android.content.Intent
+import android.media.MediaPlayer
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.metegelistirme.R
 import com.metegelistirme.activities.modules.LanguageModuleActivity
 import com.metegelistirme.databinding.ActivityEducationBinding
-import com.metegelistirme.ui.adapters.LessonAdapter
-import com.metegelistirme.ui.models.Lesson
 
 class EducationActivity : AppCompatActivity() {
-
+    
     private lateinit var binding: ActivityEducationBinding
-
+    private lateinit var buttonClickSound: MediaPlayer
+    
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityEducationBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        // Toolbar setup
-        setSupportActionBar(binding.toolbar)
+        
+        setupUI()
+        setupClickListeners()
+    }
+    
+    private fun setupUI() {
+        // Başlık ayarla
+        supportActionBar?.title = getString(R.string.education_button)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.setDisplayShowHomeEnabled(true)
-
-        setupRecyclerView()
     }
-
-    private fun setupRecyclerView() {
-        val lessons = listOf(
-            Lesson("language", getString(R.string.language_development), "Kelime, alfabe, cümle", R.color.primary_color),
-            Lesson("math", getString(R.string.math_skills), "Sayılar, toplama, çıkarma", R.color.secondary_color),
-            Lesson("cognitive", getString(R.string.cognitive_development), "Mantık ve hafıza", R.color.accent_color),
-            Lesson("creativity", getString(R.string.creativity), "Resim ve müzik", R.color.success_green),
-            Lesson("life", getString(R.string.life_skills), "Günlük alışkanlıklar", R.color.warning_orange)
-        )
-
-        val lessonAdapter = LessonAdapter(lessons) { lesson ->
-            when (lesson.id) {
-                "language" -> startActivity(Intent(this, LanguageModuleActivity::class.java))
-                else -> {
-                    Toast.makeText(this, "Bu modül yakında!", Toast.LENGTH_SHORT).show()
-                }
+    
+    private fun setupClickListeners() {
+        binding.languageCard.setOnClickListener {
+            playButtonClickSound()
+            startActivity(Intent(this, LanguageModuleActivity::class.java))
+        }
+        
+        binding.mathCard.setOnClickListener {
+            playButtonClickSound()
+            // TODO: Matematik modülü aktivitesi eklenecek
+            showComingSoonMessage()
+        }
+        
+        binding.cognitiveCard.setOnClickListener {
+            playButtonClickSound()
+            // TODO: Bilişsel gelişim modülü eklenecek
+            showComingSoonMessage()
+        }
+        
+        binding.creativityCard.setOnClickListener {
+            playButtonClickSound()
+            // TODO: Yaratıcılık modülü eklenecek
+            showComingSoonMessage()
+        }
+        
+        binding.lifeSkillsCard.setOnClickListener {
+            playButtonClickSound()
+            // TODO: Günlük yaşam modülü eklenecek
+            showComingSoonMessage()
+        }
+    }
+    
+    private fun playButtonClickSound() {
+        try {
+            buttonClickSound = MediaPlayer.create(this, R.raw.button_click)
+            buttonClickSound.setOnCompletionListener {
+                it.release()
             }
-        }
-
-        binding.educationRecyclerView.apply {
-            layoutManager = LinearLayoutManager(this@EducationActivity)
-            adapter = lessonAdapter
+            buttonClickSound.start()
+        } catch (e: Exception) {
+            e.printStackTrace()
         }
     }
-
+    
+    private fun showComingSoonMessage() {
+        // TODO: Yakında eklenecek mesajı göster
+    }
+    
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
         return true
+    }
+    
+    override fun onDestroy() {
+        super.onDestroy()
+        if (::buttonClickSound.isInitialized && buttonClickSound.isPlaying) {
+            buttonClickSound.stop()
+            buttonClickSound.release()
+        }
     }
 }
