@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.metegelistirme.R
 import com.metegelistirme.activities.modules.LanguageModuleActivity
 import com.metegelistirme.activities.modules.MathModuleActivity
+import com.metegelistirme.activities.modules.LifeSkillsModuleActivity
 import com.metegelistirme.adapters.EducationAdapter
 import com.metegelistirme.databinding.ActivityEducationBinding
 import com.metegelistirme.models.EducationModule
@@ -104,10 +105,7 @@ class EducationActivity : AppCompatActivity() {
                 showComingSoonMessage()
                 return
             }
-            ModuleType.LIFE_SKILLS -> {
-                showComingSoonMessage()
-                return
-            }
+            ModuleType.LIFE_SKILLS -> Intent(this, LifeSkillsModuleActivity::class.java)
         }
         startActivity(intent)
     }

@@ -88,6 +88,21 @@
             android:exported="false"
             android:screenOrientation="portrait" />
 
+        <activity
+            android:name=".activities.modules.LifeSkillsModuleActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activities.modules.lifeskills.ColorsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activities.modules.lifeskills.AnimalsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
         <!-- Oyunlar -->
         <activity
             android:name=".activities.games.MatchingGameActivity"
