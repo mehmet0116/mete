@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<data-extraction-rules xmlns:android="http://schemas.android.com/apk/res/android">
+<data-extraction-rules>
     <cloud-backup>
-        <!-- Include app data to be backed up to cloud -->
-        <include domain="sharedpref" path="user_preferences.xml"/>
-        <include domain="database" path="app_database.db"/>
-        <include domain="file" path="user_progress/"/>
-        <include domain="file" path="achievements/"/>
+        <!-- Include shared preferences -->
+        <include domain="sharedpref" path="."/>
+        
+        <!-- Include database -->
+        <include domain="database" path="."/>
     </cloud-backup>
     
     <device-transfer>
-        <!-- Include app data to be transferred to new device -->
+        <!-- Include shared preferences -->
         <include domain="sharedpref" path="."/>
+        
+        <!-- Include database -->
         <include domain="database" path="."/>
-        <include domain="file" path="."/>
     </device-transfer>
 </data-extraction-rules>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<full-backup-content xmlns:android="http://schemas.android.com/apk/res/android">
+<full-backup-content>
     <!-- Include shared preferences -->
     <include domain="sharedpref" path="."/>
     
@@ -9,11 +9,9 @@
     <!-- Include files in internal storage -->
     <include domain="file" path="."/>
     
-    <!-- Exclude cache and temp files -->
-    <exclude domain="database" path="cache"/>
+    <!-- Exclude cache directory -->
     <exclude domain="file" path="cache"/>
-    <exclude domain="file" path="temp"/>
     
-    <!-- Exclude sensitive data that shouldn't be backed up -->
-    <exclude domain="sharedpref" path="sensitive_prefs.xml"/>
+    <!-- Exclude no_backup directory -->
+    <exclude domain="file" path="no_backup"/>
 </full-backup-content>

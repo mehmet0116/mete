@@ -1,24 +1,51 @@
-<?xml version="1.0" encoding="utf-8"?>
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
     android:width="108dp"
     android:height="108dp"
     android:viewportWidth="108"
     android:viewportHeight="108">
-
-    <group android:scaleX="0.46"
-        android:scaleY="0.46"
-        android:translateX="29.16"
-        android:translateY="29.16">
-
-        <!-- Graduation cap icon for education app -->
+    
+    <group android:scaleX="0.8"
+        android:scaleY="0.8"
+        android:translateX="10.8"
+        android:translateY="10.8">
+        
+        <!-- Mete Character Head -->
+        <path
+            android:fillColor="#4FC3F7"
+            android:pathData="M54,27a27,27 0,1 0,0 54a27,27 0,1 0,0 -54z"/>
+        
+        <!-- Face Outline -->
         <path
             android:fillColor="#FFFFFF"
-            android:pathData="M54,1L1,28l17,9.3V60c0,4.4 16.4,8 36,8s36,-3.6 36,-8V37.3l8,-4.4v23.6h8V28L54,1zM54,60c-14.8,0 -28,-2.5 -28,-5v-16.6l28,15.3l28,-15.3V55c0,2.5 -13.2,5 -28,5z"/>
-
-        <!-- Book -->
+            android:pathData="M54,36a18,18 0,1 0,0 36a18,18 0,1 0,0 -36z"/>
+        
+        <!-- Left Eye -->
+        <path
+            android:fillColor="#0288D1"
+            android:pathData="M45,45a3,3 0,1 0,0 6a3,3 0,1 0,0 -6z"/>
+        
+        <!-- Right Eye -->
+        <path
+            android:fillColor="#0288D1"
+            android:pathData="M63,45a3,3 0,1 0,0 6a3,3 0,1 0,0 -6z"/>
+        
+        <!-- Smile -->
+        <path
+            android:fillColor="#FF4081"
+            android:strokeColor="#FF4081"
+            android:strokeWidth="2"
+            android:pathData="M45,60 Q54,66 63,60"/>
+        
+        <!-- Hat -->
+        <path
+            android:fillColor="#FFB74D"
+            android:pathData="M36,27h36v-9a18,9 0,0 0,-36 0z"/>
+        
+        <!-- Star on Hat -->
         <path
             android:fillColor="#FFFFFF"
-            android:pathData="M54,75L20,75c-2.2,0 -4,1.8 -4,4v28c0,2.2 1.8,4 4,4h34c2.2,0 4,-1.8 4,-4V79c0,-2.2 -1.8,-4 -4,-4zM50,103h-26V83h26v20z"/>
+            android:pathData="M54,18l2,6h6l-5,4 2,6 -5-4 -5,4 2-6 -5-4h6z"/>
+        
     </group>
 </vector>
-

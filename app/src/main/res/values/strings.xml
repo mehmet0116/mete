@@ -1,147 +1,149 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- App info -->
+    <!-- App Info -->
     <string name="app_name">Mete Eğitim Uygulaması</string>
-    <string name="app_description">5 yaş ve üzeri çocuklar için eğitici uygulama</string>
+    <string name="app_description">5 yaş ve üzeri çocuklar için eğitici oyunlar</string>
     
     <!-- Common -->
-    <string name="welcome">Hoş geldin!</string>
     <string name="loading">Yükleniyor...</string>
-    <string name="error">Hata oluştu</string>
-    <string name="retry">Tekrar Dene</string>
-    <string name="continue_text">Devam Et</string>
-    <string name="back">Geri</string>
-    <string name="next">İleri</string>
-    <string name="finish">Bitir</string>
+    <string name="error">Hata</string>
+    <string name="success">Başarılı</string>
+    <string name="warning">Uyarı</string>
+    <string name="ok">Tamam</string>
     <string name="cancel">İptal</string>
     <string name="save">Kaydet</string>
     <string name="delete">Sil</string>
     <string name="edit">Düzenle</string>
-    <string name="done">Tamam</string>
+    <string name="back">Geri</string>
+    <string name="next">İleri</string>
+    <string name="skip">Atla</string>
+    <string name="done">Tamamlandı</string>
+    <string name="start">Başla</string>
+    <string name="pause">Duraklat</string>
+    <string name="resume">Devam Et</string>
+    <string name="restart">Yeniden Başlat</string>
+    <string name="exit">Çıkış</string>
+    
+    <!-- Splash Screen -->
+    <string name="splash_welcome">Mete\'ye Hoş Geldin!</string>
     
     <!-- Main Menu -->
-    <string name="menu_education">Eğitim</string>
-    <string name="menu_games">Oyunlar</string>
-    <string name="menu_settings">Ayarlar</string>
-    <string name="menu_parent">Ebeveyn</string>
-    <string name="menu_profile">Profil</string>
+    <string name="main_menu_title">Ana Menü</string>
+    <string name="education_module">Eğitim Modülleri</string>
+    <string name="games">Oyunlar</string>
+    <string name="settings">Ayarlar</string>
+    <string name="parent_panel">Ebeveyn Paneli</string>
+    <string name="profile">Profil</string>
     
     <!-- Education Modules -->
-    <string name="module_language">Dil Gelişimi</string>
-    <string name="module_math">Matematik</string>
-    <string name="module_cognitive">Bilişsel Gelişim</string>
-    <string name="module_creativity">Yaratıcılık</string>
-    <string name="module_life_skills">Günlük Yaşam</string>
+    <string name="language_development">Dil Gelişimi</string>
+    <string name="math_skills">Matematik Becerileri</string>
+    <string name="cognitive_development">Bilişsel Gelişim</string>
+    <string name="creativity">Yaratıcılık</string>
+    <string name="life_skills">Günlük Yaşam Becerileri</string>
     
     <!-- Language Module -->
     <string name="alphabet_learning">Alfabe Öğreniyorum</string>
-    <string name="first_words">İlk Kelimelerim</string>
-    <string name="simple_sentences">Basit Cümleler</string>
-    <string name="english_basics">İngilizce Temeller</string>
+    <string name="vocabulary_building">Kelime Hazinesi</string>
+    <string name="story_time">Hikaye Zamanı</string>
+    <string name="pronunciation_practice">Telaffuz Alıştırmaları</string>
     
     <!-- Math Module -->
-    <string name="counting">Sayı Sayma</string>
+    <string name="counting_numbers">Sayı Sayma</string>
     <string name="addition">Toplama</string>
     <string name="subtraction">Çıkarma</string>
-    <string name="shapes">Şekiller</string>
-    <string name="patterns">Desenler</string>
+    <string name="shapes_patterns">Şekiller ve Desenler</string>
     
     <!-- Cognitive Module -->
-    <string name="memory_cards">Hafıza Kartları</string>
-    <string name="matching_game">Eşleştirme Oyunu</string>
-    <string name="find_difference">Farkı Bul</string>
-    <string name="sorting">Sıralama</string>
+    <string name="memory_games">Hafıza Oyunları</string>
+    <string name="matching_cards">Eşleştirme Kartları</string>
+    <string name="sorting_grouping">Sıralama ve Gruplama</string>
+    <string name="logic_puzzles">Mantık Bulmacaları</string>
     
     <!-- Creativity Module -->
-    <string name="drawing">Boyama</string>
-    <string name="music">Müzik</string>
+    <string name="drawing_painting">Çizim ve Boyama</string>
+    <string name="music_instruments">Müzik Aletleri</string>
     <string name="story_creation">Hikaye Oluşturma</string>
-    <string name="puzzle">Puzzle</string>
+    <string name="puzzle_solving">Puzzle Çözme</string>
     
     <!-- Life Skills Module -->
-    <string name="colors">Renkler</string>
-    <string name="animals">Hayvanlar</string>
+    <string name="colors_shapes">Renkler ve Şekiller</string>
+    <string name="animals_sounds">Hayvanlar ve Sesleri</string>
     <string name="professions">Meslekler</string>
     <string name="traffic_signs">Trafik İşaretleri</string>
     
     <!-- Games -->
-    <string name="game_matching">Eşleştirme</string>
-    <string name="game_puzzle">Yapboz</string>
-    <string name="game_memory">Hafıza Oyunu</string>
-    <string name="game_quiz">Quiz</string>
-    <string name="game_word_hunt">Kelime Avı</string>
-    <string name="game_number_puzzle">Sayı Bulmaca</string>
+    <string name="matching_game">Eşleştirme Oyunu</string>
+    <string name="puzzle_game">Puzzle Oyunu</string>
+    <string name="memory_game">Hafıza Oyunu</string>
+    <string name="quiz_game">Quiz Oyunu</string>
+    <string name="word_hunt">Kelime Avı</string>
+    <string name="number_puzzle">Sayı Bulmacası</string>
     
     <!-- Settings -->
     <string name="settings_title">Ayarlar</string>
-    <string name="settings_sound">Ses Ayarları</string>
-    <string name="settings_music">Arka Plan Müziği</string>
-    <string name="settings_sound_effects">Efekt Sesleri</string>
-    <string name="settings_voice">Sesli Yönlendirme</string>
-    <string name="settings_dark_mode">Karanlık Mod</string>
-    <string name="settings_language">Dil</string>
-    <string name="settings_notifications">Bildirimler</string>
-    <string name="settings_data">Veri Yönetimi</string>
-    <string name="settings_about">Hakkında</string>
+    <string name="sound_settings">Ses Ayarları</string>
+    <string name="background_music">Arka Plan Müziği</string>
+    <string name="sound_effects">Efekt Sesleri</string>
+    <string name="voice_guidance">Sesli Rehberlik</string>
+    <string name="display_settings">Görüntü Ayarları</string>
+    <string name="dark_mode">Karanlık Mod</string>
+    <string name="animation_speed">Animasyon Hızı</string>
+    <string name="language_settings">Dil Ayarları</string>
+    <string name="turkish">Türkçe</string>
+    <string name="english">İngilizce</string>
+    <string name="privacy_settings">Gizlilik Ayarları</string>
+    <string name="data_collection">Veri Toplama</string>
+    <string name="reset_progress">İlerlemeyi Sıfırla</string>
     
     <!-- Parent Panel -->
-    <string name="parent_title">Ebeveyn Paneli</string>
-    <string name="parent_progress">İlerleme Takibi</string>
-    <string name="parent_time_limit">Süre Sınırlaması</string>
-    <string name="parent_reports">Raporlar</string>
-    <string name="parent_achievements">Başarılar</string>
-    <string name="parent_multiple_profiles">Çoklu Profil</string>
+    <string name="parent_panel_title">Ebeveyn Paneli</string>
+    <string name="child_progress">Çocuk İlerlemesi</string>
+    <string name="time_limits">Süre Sınırlamaları</string>
+    <string name="progress_reports">İlerleme Raporları</string>
+    <string name="achievements">Başarılar</string>
+    <string name="add_child_profile">Çocuk Profili Ekle</string>
+    <string name="manage_profiles">Profilleri Yönet</string>
     
-    <!-- Feedback messages -->
-    <string name="feedback_excellent">Harikasın!</string>
-    <string name="feedback_great">Çok iyi!</string>
-    <string name="feedback_good">Güzel!</string>
-    <string name="feedback_try_again">Tekrar deneyelim</string>
-    <string name="feedback_almost">Neredeyse!</string>
-    <string name="feedback_encouragement">Herkes hata yapar, önemli olan denemek!</string>
+    <!-- Feedback Messages -->
+    <string name="excellent">Harikasın!</string>
+    <string name="great_job">Çok iyi gidiyorsun!</string>
+    <string name="well_done">Aferin!</string>
+    <string name="try_again">Tekrar deneyelim</string>
+    <string name="almost_there">Neredeyse oldu!</string>
+    <string name="you_can_do_it">Yapabilirsin!</string>
     
-    <!-- Educational content -->
-    <string name="alphabet">A B C Ç D E F G Ğ H I İ J K L M N O Ö P R S Ş T U Ü V Y Z</string>
-    <string name="numbers">1 2 3 4 5 6 7 8 9 10</string>
-    <string name="colors_list">Kırmızı, Mavi, Yeşil, Sarı, Turuncu, Mor, Pembe, Kahverengi, Siyah, Beyaz</string>
-    <string name="shapes_list">Daire, Kare, Üçgen, Dikdörtgen, Yıldız, Kalp, Oval</string>
+    <!-- Errors -->
+    <string name="error_network">İnternet bağlantısı yok</string>
+    <string name="error_loading">Yükleme hatası</string>
+    <string name="error_save">Kaydetme hatası</string>
+    <string name="error_delete">Silme hatası</string>
+    <string name="error_unknown">Bilinmeyen hata</string>
     
-    <!-- Animal names -->
-    <string name="animals_list">Kedi, Köpek, Kuş, Balık, Tavşan, Aslan, Fil, Zürafa, Maymun, Ayı</string>
+    <!-- Empty States -->
+    <string name="empty_education_modules">Henüz eğitim modülü yok</string>
+    <string name="empty_games">Henüz oyun yok</string>
+    <string name="empty_achievements">Henüz başarı yok</string>
+    <string name="empty_progress">Henüz ilerleme kaydı yok</string>
     
     <!-- Instructions -->
-    <string name="instruction_tap_to_start">Başlamak için dokun</string>
+    <string name="instruction_tap_to_start">Başlamak için dokunun</string>
     <string name="instruction_drag_and_drop">Sürükle ve bırak</string>
     <string name="instruction_tap_correct">Doğru olanı seç</string>
     <string name="instruction_listen_carefully">Dikkatlice dinle</string>
-    <string name="instruction_match_pairs">Çiftleri eşleştir</string>
+    <string name="instruction_match_items">Eşleşenleri bul</string>
     
-    <!-- Time and progress -->
-    <string name="time_spent">Geçen Süre: %1$s</string>
-    <string name="progress_percentage">İlerleme: %1$d%%</string>
-    <string name="completed">Tamamlandı</string>
-    <string name="in_progress">Devam Ediyor</string>
-    <string name="not_started">Başlamadı</string>
+    <!-- Time Formats -->
+    <string name="time_minutes">%d dakika</string>
+    <string name="time_hours_minutes">%d saat %d dakika</string>
+    <string name="today">Bugün</string>
+    <string name="yesterday">Dün</string>
+    <string name="this_week">Bu Hafta</string>
+    <string name="this_month">Bu Ay</string>
     
-    <!-- Achievements -->
-    <string name="achievement_first_step">İlk Adım</string>
-    <string name="achievement_alphabet_master">Alfabe Ustası</string>
-    <string name="achievement_math_wizard">Matematik Büyücüsü</string>
-    <string name="achievement_memory_champion">Hafıza Şampiyonu</string>
-    <string name="achievement_creative_genius">Yaratıcı Dahi</string>
-    
-    <!-- Profile -->
-    <string name="profile_name">İsim</string>
-    <string name="profile_age">Yaş</string>
-    <string name="profile_avatar">Avatar</string>
-    <string name="profile_create">Profil Oluştur</string>
-    <string name="profile_edit">Profili Düzenle</string>
-    <string name="profile_delete">Profili Sil</string>
-    
-    <!-- About -->
-    <string name="about_version">Versiyon: %1$s</string>
-    <string name="about_developer">Geliştirici: Mete Eğitim Ekibi</string>
-    <string name="about_privacy">Gizlilik Politikası</string>
-    <string name="about_terms">Kullanım Şartları</string>
-    <string name="about_contact">İletişim</string>
+    <!-- Progress -->
+    <string name="progress_completed">Tamamlandı: %d%%</string>
+    <string name="stars_earned">Kazanılan Yıldız: %d</string>
+    <string name="achievements_earned">Kazanılan Başarı: %d</string>
+    <string name="time_spent">Geçirilen Süre: %s</string>
 </resources>

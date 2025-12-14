@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Custom attributes for Mete components -->
+    
+    <!-- MeteButton -->
+    <declare-styleable name="MeteButton">
+        <attr name="buttonType" format="enum">
+            <enum name="primary" value="0" />
+            <enum name="secondary" value="1" />
+            <enum name="success" value="2" />
+            <enum name="warning" value="3" />
+            <enum name="error" value="4" />
+        </attr>
+        <attr name="buttonSize" format="enum">
+            <enum name="small" value="0" />
+            <enum name="medium" value="1" />
+            <enum name="large" value="2" />
+        </attr>
+        <attr name="cornerRadius" format="dimension" />
+        <attr name="elevation" format="dimension" />
+        <attr name="iconPadding" format="dimension" />
+    </declare-styleable>
+    
+    <!-- MeteCard -->
+    <declare-styleable name="MeteCard">
+        <attr name="cardType" format="enum">
+            <enum name="default" value="0" />
+            <enum name="highlighted" value="1" />
+            <enum name="interactive" value="2" />
+        </attr>
+        <attr name="cornerRadius" format="dimension" />
+        <attr name="elevation" format="dimension" />
+        <attr name="padding" format="dimension" />
+    </declare-styleable>
+    
+    <!-- MeteProgressBar -->
+    <declare-styleable name="MeteProgressBar">
+        <attr name="progressType" format="enum">
+            <enum name="linear" value="0" />
+            <enum name="circular" value="1" />
+        </attr>
+        <attr name="progressColor" format="color" />
+        <attr name="trackColor" format="color" />
+        <attr name="indeterminate" format="boolean" />
+        <attr name="showPercentage" format="boolean" />
+    </declare-styleable>
+    
+    <!-- MeteAvatar -->
+    <declare-styleable name="MeteAvatar">
+        <attr name="avatarSize" format="enum">
+            <enum name="small" value="0" />
+            <enum name="medium" value="1" />
+            <enum name="large" value="2" />
+            <enum name="xlarge" value="3" />
+        </attr>
+        <attr name="avatarShape" format="enum">
+            <enum name="circle" value="0" />
+            <enum name="rounded" value="1" />
+            <enum name="square" value="2" />
+        </attr>
+        <attr name="borderWidth" format="dimension" />
+        <attr name="borderColor" format="color" />
+    </declare-styleable>
+    
+    <!-- MeteBadge -->
+    <declare-styleable name="MeteBadge">
+        <attr name="badgeType" format="enum">
+            <enum name="notification" value="0" />
+            <enum name="status" value="1" />
+            <enum name="achievement" value="2" />
+        </attr>
+        <attr name="badgeColor" format="color" />
+        <attr name="badgeTextColor" format="color" />
+        <attr name="maxCount" format="integer" />
+    </declare-styleable>
+</resources>
