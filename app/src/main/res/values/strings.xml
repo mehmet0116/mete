@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">Mete Eğitici Çocuk</string>
+    
+    <!-- Splash Screen -->
+    <string name="splash_title">Mete\'ye Hoş Geldin!</string>
+    
+    <!-- Main Menu -->
+    <string name="main_menu_title">Ana Menü</string>
+    <string name="btn_education">Eğitim</string>
+    <string name="btn_games">Oyunlar</string>
+    <string name="btn_settings">Ayarlar</string>
+    <string name="btn_parent">Ebeveyn</string>
+    
+    <!-- Education Module -->
+    <string name="education_title">Eğitim Modülleri</string>
+    <string name="language_development">Dil Gelişimi</string>
+    <string name="math_skills">Matematik</string>
+    <string name="cognitive_development">Bilişsel Gelişim</string>
+    <string name="creativity">Yaratıcılık</string>
+    <string name="life_skills">Yaşam Becerileri</string>
+    
+    <!-- Games Module -->
+    <string name="games_title">Oyunlar</string>
+    <string name="matching_game">Eşleştirme</string>
+    <string name="puzzle_game">Puzzle</string>
+    <string name="memory_game">Hafıza Oyunu</string>
+    <string name="quiz_game">Sesli Quiz</string>
+    
+    <!-- Settings -->
+    <string name="settings_title">Ayarlar</string>
+    <string name="sound_settings">Ses Ayarları</string>
+    <string name="theme_settings">Tema</string>
+    <string name="language_settings">Dil</string>
+    
+    <!-- Parent Controls -->
+    <string name="parent_title">Ebeveyn Kontrolleri</string>
+    <string name="progress_tracking">İlerleme Takibi</string>
+    <string name="time_limits">Süre Sınırlamaları</string>
+    <string name="reports">Raporlar</string>
+    
+    <!-- Common -->
+    <string name="back">Geri</string>
+    <string name="next">İleri</string>
+    <string name="start">Başla</string>
+    <string name="pause">Duraklat</string>
+    <string name="resume">Devam Et</string>
+    <string name="exit">Çıkış</string>
+    
+    <!-- Feedback Messages -->
+    <string name="great_job">Harikasın!</string>
+    <string name="try_again">Bir daha deneyelim</string>
+    <string name="you_can_do_it">Başarabilirsin!</string>
+</resources>
