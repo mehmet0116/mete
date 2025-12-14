@@ -46,6 +46,10 @@ android {
 kapt {
     correctErrorTypes = true
     useBuildCache = true
+    javacOptions {
+        option("-source", "17")
+        option("-target", "17")
+    }
     arguments {
         arg("room.schemaLocation", "$projectDir/schemas")
         arg("room.incremental", "true")

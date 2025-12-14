@@ -31,11 +31,14 @@ class SplashActivity : AppCompatActivity() {
     
     private fun playWelcomeSound() {
         try {
-            mediaPlayer = MediaPlayer.create(this, R.raw.welcome_sound)
-            mediaPlayer.setOnCompletionListener {
-                it.release()
+            val soundResId = resources.getIdentifier("welcome_sound", "raw", packageName)
+            if (soundResId != 0) {
+                mediaPlayer = MediaPlayer.create(this, soundResId)
+                mediaPlayer.setOnCompletionListener {
+                    it.release()
+                }
+                mediaPlayer.start()
             }
-            mediaPlayer.start()
         } catch (e: Exception) {
             e.printStackTrace()
             // Ses dosyası yoksa sessiz devam et

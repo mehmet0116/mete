@@ -13,6 +13,10 @@
     <string name="games_button">Oyunlar</string>
     <string name="settings_button">Ayarlar</string>
     <string name="parent_button">Ebeveyn Paneli</string>
+
+    <!-- Sayfa Başlıkları -->
+    <string name="education_title">Eğitim Modülleri</string>
+    <string name="games_title">Oyunlar</string>
     
     <!-- Eğitim modülleri -->
     <string name="language_module">Dil Gelişimi</string>
@@ -33,12 +37,16 @@
     <string name="background_music">Arka Plan Müziği</string>
     <string name="sound_effects">Efekt Sesleri</string>
     <string name="dark_mode">Karanlık Mod</string>
+    <string name="theme_settings">Tema Ayarları</string>
     <string name="language_settings">Dil Ayarları</string>
     
     <!-- Ebeveyn paneli -->
+    <string name="parent_title">Ebeveyn Paneli</string>
     <string name="parent_panel_title">Ebeveyn Paneli</string>
     <string name="progress_report">İlerleme Raporu</string>
+    <string name="progress_tracking">İlerleme Takibi</string>
     <string name="time_limit">Süre Sınırlaması</string>
+    <string name="time_limits">Süre Sınırları</string>
     <string name="achievements">Başarılar</string>
     
     <!-- Ses mesajları -->

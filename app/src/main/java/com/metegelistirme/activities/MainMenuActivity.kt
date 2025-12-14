@@ -50,11 +50,14 @@ class MainMenuActivity : AppCompatActivity() {
     
     private fun playButtonClickSound() {
         try {
-            buttonClickSound = MediaPlayer.create(this, R.raw.button_click)
-            buttonClickSound.setOnCompletionListener {
-                it.release()
+            val soundResId = resources.getIdentifier("button_click", "raw", packageName)
+            if (soundResId != 0) {
+                buttonClickSound = MediaPlayer.create(this, soundResId)
+                buttonClickSound.setOnCompletionListener {
+                    it.release()
+                }
+                buttonClickSound.start()
             }
-            buttonClickSound.start()
         } catch (e: Exception) {
             e.printStackTrace()
         }

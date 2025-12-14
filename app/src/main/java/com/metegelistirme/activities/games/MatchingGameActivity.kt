@@ -4,10 +4,12 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.View
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.card.MaterialCardView
+import com.metegelistirme.R
 import com.metegelistirme.databinding.ActivityMatchingGameBinding
-import com.metegelistirme.databinding.ItemGameCardBinding
 
 class MatchingGameActivity : AppCompatActivity() {
 
@@ -16,8 +18,8 @@ class MatchingGameActivity : AppCompatActivity() {
     private val items = listOf("🍎", "🍌", "🍇", "🍓", "🍊", "🍉")
     private val gameCards = mutableListOf<String>()
 
-    private var firstCardBinding: ItemGameCardBinding? = null
-    private var secondCardBinding: ItemGameCardBinding? = null
+    private var firstCard: Pair<MaterialCardView, TextView>? = null
+    private var secondCard: Pair<MaterialCardView, TextView>? = null
 
     private var score = 0
     private var matches = 0
@@ -48,35 +50,40 @@ class MatchingGameActivity : AppCompatActivity() {
         binding.gridLayout.removeAllViews()
 
         gameCards.forEach { item ->
-            val cardBinding = ItemGameCardBinding.inflate(layoutInflater, binding.gridLayout, false)
+            // Inflate the matching card layout
+            val cardView = layoutInflater.inflate(R.layout.item_matching_card, binding.gridLayout, false) as MaterialCardView
+            val cardText = cardView.findViewById<TextView>(R.id.cardText)
 
-            cardBinding.cardText.text = "?"
-            cardBinding.root.tag = item // Store the emoji in the root view's tag
+            cardText.text = "?"
+            cardView.tag = item // Store the emoji in the card view's tag
 
-            cardBinding.root.setOnClickListener {
-                onCardClick(cardBinding)
+            cardView.setOnClickListener {
+                onCardClick(Pair(cardView, cardText))
             }
 
-            binding.gridLayout.addView(cardBinding.root)
+            binding.gridLayout.addView(cardView)
         }
 
         updateScore()
     }
 
-    private fun onCardClick(cardBinding: ItemGameCardBinding) {
+    private fun onCardClick(card: Pair<MaterialCardView, TextView>) {
+        val cardView = card.first
+        val cardText = card.second
+
         // If a check is pending, or card is matched, or it's the first card again, do nothing
-        if (secondCardBinding != null || cardBinding.root.visibility == View.INVISIBLE || cardBinding == firstCardBinding) {
+        if (secondCard != null || cardView.visibility == View.INVISIBLE || card == firstCard) {
             return
         }
 
         // Reveal card
-        cardBinding.cardText.text = cardBinding.root.tag as String
-        cardBinding.cardText.textSize = 36f
+        cardText.text = cardView.tag as String
+        cardText.textSize = 36f
 
-        if (firstCardBinding == null) {
-            firstCardBinding = cardBinding
-        } else { // secondCardBinding is guaranteed to be null here
-            secondCardBinding = cardBinding
+        if (firstCard == null) {
+            firstCard = card
+        } else { // secondCard is guaranteed to be null here
+            secondCard = card
 
             Handler(Looper.getMainLooper()).postDelayed({
                 checkMatch()
@@ -85,33 +92,35 @@ class MatchingGameActivity : AppCompatActivity() {
     }
 
     private fun checkMatch() {
-        val first = firstCardBinding
-        val second = secondCardBinding
+        val first = firstCard
+        val second = secondCard
 
-        if (first?.root?.tag == second?.root?.tag) {
-            // Match
-            score += 10
-            matches++
-            Toast.makeText(this, "🎉 Harika! +10 puan!", Toast.LENGTH_SHORT).show()
+        if (first != null && second != null) {
+            if (first.first.tag == second.first.tag) {
+                // Match
+                score += 10
+                matches++
+                Toast.makeText(this, "🎉 Harika! +10 puan!", Toast.LENGTH_SHORT).show()
 
-            first?.root?.visibility = View.INVISIBLE
-            second?.root?.visibility = View.INVISIBLE
+                first.first.visibility = View.INVISIBLE
+                second.first.visibility = View.INVISIBLE
 
-            if (matches == items.size) {
-                Handler(Looper.getMainLooper()).postDelayed({
-                    Toast.makeText(this, "🏆 Tebrikler! Oyunu bitirdin! Toplam: $score puan", Toast.LENGTH_LONG).show()
-                }, 300)
+                if (matches == items.size) {
+                    Handler(Looper.getMainLooper()).postDelayed({
+                        Toast.makeText(this, "🏆 Tebrikler! Oyunu bitirdin! Toplam: $score puan", Toast.LENGTH_LONG).show()
+                    }, 300)
+                }
+            } else {
+                // No match
+                first.second.text = "?"
+                first.second.textSize = 24f
+                second.second.text = "?"
+                second.second.textSize = 24f
             }
-        } else {
-            // No match
-            first?.cardText?.text = "?"
-            first?.cardText?.textSize = 24f
-            second?.cardText?.text = "?"
-            second?.cardText?.textSize = 24f
         }
         
-        firstCardBinding = null
-        secondCardBinding = null
+        firstCard = null
+        secondCard = null
         updateScore()
     }
 
@@ -120,3 +129,5 @@ class MatchingGameActivity : AppCompatActivity() {
         binding.tvMatches.text = "Eşleşme: $matches/${items.size}"
     }
 }
+
+

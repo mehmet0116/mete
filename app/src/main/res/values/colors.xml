@@ -8,7 +8,8 @@
     <color name="surface_light">#F5F5F5</color>
     <color name="text_primary_light">#212121</color>
     <color name="text_secondary_light">#757575</color>
-    
+    <color name="text_light">#212121</color>
+
     <!-- Karanlık Mod -->
     <color name="primary_dark">#0288D1</color>
     <color name="secondary_dark">#F57C00</color>
@@ -29,4 +30,7 @@
     <color name="gradient_start">#4FC3F7</color>
     <color name="gradient_middle">#29B6F6</color>
     <color name="gradient_end">#0288D1</color>
+
+    <!-- Launcher icon renkleri -->
+    <color name="ic_launcher_background">#4FC3F7</color>
 </resources>

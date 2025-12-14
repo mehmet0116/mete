@@ -24,9 +24,9 @@
         <item name="materialButtonStyle">@style/Widget.MeteEgitimUygulamasi.Button</item>
         <item name="buttonStyle">@style/Widget.MeteEgitimUygulamasi.Button</item>
         
-        <!-- Font -->
-        <item name="android:fontFamily">@font/kids_font</item>
-        
+        <!-- Font - kullanılmıyor, sistem fontu kullanılacak -->
+        <!-- <item name="android:fontFamily">@font/kids_font</item> -->
+
         <!-- Corner radius -->
         <item name="cornerRadius">16dp</item>
     </style>
