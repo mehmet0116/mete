@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.metegelistirme.R
 import com.metegelistirme.activities.games.MatchingGameActivity
 import com.metegelistirme.activities.games.SimplePuzzleActivity
+import com.metegelistirme.activities.games.MemoryGameActivity
+import com.metegelistirme.activities.games.QuizGameActivity
 import com.metegelistirme.adapters.GamesAdapter
 import com.metegelistirme.databinding.ActivityGamesBinding
 import com.metegelistirme.models.Game
@@ -90,14 +92,8 @@ class GamesActivity : AppCompatActivity() {
         val intent = when (game.gameType) {
             GameType.MATCHING -> Intent(this, MatchingGameActivity::class.java)
             GameType.PUZZLE -> Intent(this, SimplePuzzleActivity::class.java)
-            GameType.MEMORY -> {
-                Toast.makeText(this, "🧠 Hafıza Oyunu yakında!", Toast.LENGTH_SHORT).show()
-                return
-            }
-            GameType.QUIZ -> {
-                Toast.makeText(this, "🎤 Sesli Quiz yakında!", Toast.LENGTH_SHORT).show()
-                return
-            }
+            GameType.MEMORY -> Intent(this, MemoryGameActivity::class.java)
+            GameType.QUIZ -> Intent(this, QuizGameActivity::class.java)
         }
         startActivity(intent)
     }

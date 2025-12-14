@@ -58,6 +58,81 @@
             android:exported="false"
             android:screenOrientation="portrait" />
 
+        <activity
+            android:name=".activities.modules.MathModuleActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activities.modules.language.AlphabetLearningActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activities.modules.math.CountingActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activities.modules.math.AdditionActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activities.modules.math.SubtractionActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activities.modules.math.ShapesActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activities.modules.LifeSkillsModuleActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activities.modules.lifeskills.ColorsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activities.modules.lifeskills.AnimalsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activities.modules.CognitiveModuleActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activities.modules.cognitive.MemoryCardsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activities.modules.cognitive.FindDifferenceActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activities.modules.CreativityModuleActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activities.modules.creativity.DrawingActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activities.modules.creativity.MusicActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
         <!-- Oyunlar -->
         <activity
             android:name=".activities.games.MatchingGameActivity"
@@ -66,6 +141,16 @@
 
         <activity
             android:name=".activities.games.SimplePuzzleActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activities.games.MemoryGameActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activities.games.QuizGameActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
 
