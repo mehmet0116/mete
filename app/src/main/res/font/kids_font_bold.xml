@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Empty font-family definition that falls back to system default sans-serif font (bold weight).
+     This is a placeholder to satisfy resource references in themes.
+     Replace with actual font files for custom typography. -->
 <font-family xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 </font-family>
