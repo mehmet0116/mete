@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/secondary_color"
+            app:title="Müzik Zamanı"
+            app:titleTextColor="@android:color/white" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <TextView
+            android:id="@+id/tvInstruction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enstrümanına tıkla ve müzik yap! 🎵"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textColor="@color/text_primary"
+            android:layout_marginBottom="32dp" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            app:cardElevation="8dp"
+            app:cardCornerRadius="20dp"
+            app:cardBackgroundColor="@color/secondary_color">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="32dp"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/tvPlaying"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🎹 Piyano"
+                    android:textSize="36sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    android:id="@+id/tvSound"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Do Re Mi Fa Sol La Si"
+                    android:textSize="24sp"
+                    android:textColor="@android:color/white"
+                    android:layout_marginTop="16dp" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enstrümanlar:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"
+            android:textColor="@color/text_primary" />
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="3"
+            android:alignmentMode="alignBounds"
+            android:columnOrderPreserved="false"
+            android:useDefaultMargins="true">
+
+            <Button android:id="@+id/btnPiano" android:text="🎹\nPiyano" android:textSize="20sp" android:layout_width="0dp" android:layout_columnWeight="1" android:layout_height="100dp" app:cornerRadius="12dp" android:backgroundTint="@color/primary_color"/>
+            <Button android:id="@+id/btnGuitar" android:text="🎸\nGitar" android:textSize="20sp" android:layout_width="0dp" android:layout_columnWeight="1" android:layout_height="100dp" app:cornerRadius="12dp" android:backgroundTint="@color/secondary_color"/>
+            <Button android:id="@+id/btnDrum" android:text="🥁\nDavul" android:textSize="20sp" android:layout_width="0dp" android:layout_columnWeight="1" android:layout_height="100dp" app:cornerRadius="12dp" android:backgroundTint="@color/accent_color"/>
+            <Button android:id="@+id/btnTrumpet" android:text="🎺\nTrompet" android:textSize="20sp" android:layout_width="0dp" android:layout_columnWeight="1" android:layout_height="100dp" app:cornerRadius="12dp" android:backgroundTint="@color/success_green"/>
+            <Button android:id="@+id/btnViolin" android:text="🎻\nKeman" android:textSize="20sp" android:layout_width="0dp" android:layout_columnWeight="1" android:layout_height="100dp" app:cornerRadius="12dp" android:backgroundTint="@color/warning_orange"/>
+
+        </GridLayout>
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

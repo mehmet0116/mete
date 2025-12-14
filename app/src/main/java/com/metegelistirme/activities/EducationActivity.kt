@@ -10,6 +10,7 @@ import com.metegelistirme.activities.modules.LanguageModuleActivity
 import com.metegelistirme.activities.modules.MathModuleActivity
 import com.metegelistirme.activities.modules.LifeSkillsModuleActivity
 import com.metegelistirme.activities.modules.CognitiveModuleActivity
+import com.metegelistirme.activities.modules.CreativityModuleActivity
 import com.metegelistirme.adapters.EducationAdapter
 import com.metegelistirme.databinding.ActivityEducationBinding
 import com.metegelistirme.models.EducationModule
@@ -99,10 +100,7 @@ class EducationActivity : AppCompatActivity() {
             ModuleType.LANGUAGE -> Intent(this, LanguageModuleActivity::class.java)
             ModuleType.MATH -> Intent(this, MathModuleActivity::class.java)
             ModuleType.COGNITIVE -> Intent(this, CognitiveModuleActivity::class.java)
-            ModuleType.CREATIVITY -> {
-                showComingSoonMessage()
-                return
-            }
+            ModuleType.CREATIVITY -> Intent(this, CreativityModuleActivity::class.java)
             ModuleType.LIFE_SKILLS -> Intent(this, LifeSkillsModuleActivity::class.java)
         }
         startActivity(intent)
@@ -123,14 +121,6 @@ class EducationActivity : AppCompatActivity() {
             e.printStackTrace()
             // Ses dosyası yoksa sessiz devam et
         }
-    }
-    
-    private fun showComingSoonMessage() {
-        android.app.AlertDialog.Builder(this)
-            .setTitle("Yakında")
-            .setMessage("Bu modül çok yakında eklenecek!")
-            .setPositiveButton("Tamam", null)
-            .show()
     }
     
     override fun onSupportNavigateUp(): Boolean {

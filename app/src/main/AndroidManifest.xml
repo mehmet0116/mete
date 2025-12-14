@@ -118,6 +118,21 @@
             android:exported="false"
             android:screenOrientation="portrait" />
 
+        <activity
+            android:name=".activities.modules.CreativityModuleActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activities.modules.creativity.DrawingActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activities.modules.creativity.MusicActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
         <!-- Oyunlar -->
         <activity
             android:name=".activities.games.MatchingGameActivity"
