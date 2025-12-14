@@ -2,35 +2,46 @@
 <resources>
     <!-- Aydınlık Mod -->
     <color name="primary_color">#4FC3F7</color>
+    <color name="primary_light">#8BF6FF</color>
+    <color name="primary_dark">#0093C4</color>
+    
     <color name="secondary_color">#FFB74D</color>
+    <color name="secondary_light">#FFE97D</color>
+    <color name="secondary_dark">#C88719</color>
+    
     <color name="accent_color">#FF4081</color>
+    <color name="accent_light">#FF79B0</color>
+    <color name="accent_dark">#C60055</color>
+    
     <color name="background_light">#FFFFFF</color>
     <color name="surface_light">#F5F5F5</color>
-    <color name="text_primary_light">#212121</color>
-    <color name="text_secondary_light">#757575</color>
-    <color name="text_light">#212121</color>
-
+    <color name="on_surface_light">#212121</color>
+    
     <!-- Karanlık Mod -->
-    <color name="primary_dark">#0288D1</color>
-    <color name="secondary_dark">#F57C00</color>
-    <color name="accent_dark">#FF80AB</color>
+    <color name="primary_dark_mode">#0288D1</color>
+    <color name="secondary_dark_mode">#F57C00</color>
+    <color name="accent_dark_mode">#FF4081</color>
+    
     <color name="background_dark">#121212</color>
     <color name="surface_dark">#1E1E1E</color>
-    <color name="text_primary_dark">#FFFFFF</color>
-    <color name="text_secondary_dark">#B0B0B0</color>
+    <color name="on_surface_dark">#FFFFFF</color>
     
-    <!-- Ortak renkler -->
-    <color name="success_green">#4CAF50</color>
-    <color name="warning_orange">#FF9800</color>
-    <color name="error_red">#F44336</color>
+    <!-- Common colors -->
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
+    <color name="gray_light">#E0E0E0</color>
+    <color name="gray">#9E9E9E</color>
+    <color name="gray_dark">#616161</color>
     
-    <!-- Gradyan renkleri -->
-    <color name="gradient_start">#4FC3F7</color>
-    <color name="gradient_middle">#29B6F6</color>
-    <color name="gradient_end">#0288D1</color>
-
-    <!-- Launcher icon renkleri -->
-    <color name="ic_launcher_background">#4FC3F7</color>
+    <!-- Success and error -->
+    <color name="success_green">#4CAF50</color>
+    <color name="error_red">#F44336</color>
+    <color name="warning_orange">#FF9800</color>
+    
+    <!-- Educational colors -->
+    <color name="edu_blue">#2196F3</color>
+    <color name="edu_green">#4CAF50</color>
+    <color name="edu_yellow">#FFEB3B</color>
+    <color name="edu_red">#F44336</color>
+    <color name="edu_purple">#9C27B0</color>
 </resources>
