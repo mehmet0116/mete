@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/primary_color"
+            app:title="Hafıza Kartları"
+            app:titleTextColor="@android:color/white" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardElevation="4dp"
+            app:cardCornerRadius="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/tvScore"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Puan: 0"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/primary_color" />
+
+                <TextView
+                    android:id="@+id/tvLevel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Seviye: 1"
+                    android:textSize="16sp"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/secondary_color" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/tvInstruction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Başlamak için tıkla"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textColor="@color/text_primary"
+            android:layout_marginBottom="24dp" />
+
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:columnCount="3"
+            android:rowCount="2"
+            android:alignmentMode="alignBounds"
+            android:columnOrderPreserved="false"
+            android:useDefaultMargins="true"
+            android:layout_marginBottom="32dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card1"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:cardElevation="4dp"
+                app:cardCornerRadius="12dp"
+                app:cardBackgroundColor="@color/primary_color"
+                android:alpha="0.5">
+                <TextView android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:text="1" android:textSize="32sp" android:textColor="@android:color/white" android:textStyle="bold" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card2"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:cardElevation="4dp"
+                app:cardCornerRadius="12dp"
+                app:cardBackgroundColor="@color/secondary_color"
+                android:alpha="0.5">
+                <TextView android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:text="2" android:textSize="32sp" android:textColor="@android:color/white" android:textStyle="bold" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card3"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:cardElevation="4dp"
+                app:cardCornerRadius="12dp"
+                app:cardBackgroundColor="@color/accent_color"
+                android:alpha="0.5">
+                <TextView android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:text="3" android:textSize="32sp" android:textColor="@android:color/white" android:textStyle="bold" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card4"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:cardElevation="4dp"
+                app:cardCornerRadius="12dp"
+                app:cardBackgroundColor="@color/success_green"
+                android:alpha="0.5">
+                <TextView android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:text="4" android:textSize="32sp" android:textColor="@android:color/white" android:textStyle="bold" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card5"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:cardElevation="4dp"
+                app:cardCornerRadius="12dp"
+                app:cardBackgroundColor="@color/warning_orange"
+                android:alpha="0.5">
+                <TextView android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:text="5" android:textSize="32sp" android:textColor="@android:color/white" android:textStyle="bold" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card6"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:cardElevation="4dp"
+                app:cardCornerRadius="12dp"
+                app:cardBackgroundColor="@color/primary_color"
+                android:alpha="0.5">
+                <TextView android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:text="6" android:textSize="32sp" android:textColor="@android:color/white" android:textStyle="bold" />
+            </com.google.android.material.card.MaterialCardView>
+
+        </GridLayout>
+
+        <Button
+            android:id="@+id/btnStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🎮 Başla"
+            android:textSize="20sp"
+            android:padding="16dp"
+            app:cornerRadius="16dp"
+            android:backgroundTint="@color/secondary_color" />
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

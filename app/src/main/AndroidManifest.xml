@@ -103,6 +103,21 @@
             android:exported="false"
             android:screenOrientation="portrait" />
 
+        <activity
+            android:name=".activities.modules.CognitiveModuleActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activities.modules.cognitive.MemoryCardsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activities.modules.cognitive.FindDifferenceActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
         <!-- Oyunlar -->
         <activity
             android:name=".activities.games.MatchingGameActivity"

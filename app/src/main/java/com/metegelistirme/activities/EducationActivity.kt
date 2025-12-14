@@ -9,6 +9,7 @@ import com.metegelistirme.R
 import com.metegelistirme.activities.modules.LanguageModuleActivity
 import com.metegelistirme.activities.modules.MathModuleActivity
 import com.metegelistirme.activities.modules.LifeSkillsModuleActivity
+import com.metegelistirme.activities.modules.CognitiveModuleActivity
 import com.metegelistirme.adapters.EducationAdapter
 import com.metegelistirme.databinding.ActivityEducationBinding
 import com.metegelistirme.models.EducationModule
@@ -97,10 +98,7 @@ class EducationActivity : AppCompatActivity() {
         val intent = when (module.moduleType) {
             ModuleType.LANGUAGE -> Intent(this, LanguageModuleActivity::class.java)
             ModuleType.MATH -> Intent(this, MathModuleActivity::class.java)
-            ModuleType.COGNITIVE -> {
-                showComingSoonMessage()
-                return
-            }
+            ModuleType.COGNITIVE -> Intent(this, CognitiveModuleActivity::class.java)
             ModuleType.CREATIVITY -> {
                 showComingSoonMessage()
                 return

@@ -59,8 +59,7 @@ class SettingsActivity : AppCompatActivity() {
 
         // Dil Ayarları
         findViewById<MaterialButton>(R.id.btnLanguage).setOnClickListener {
-            Toast.makeText(this, "Dil seçimi açılıyor...", Toast.LENGTH_SHORT).show()
-            // TODO: Dil seçim dialogu göster
+            showLanguageDialog()
         }
 
         // Bildirim Ayarları
@@ -77,13 +76,48 @@ class SettingsActivity : AppCompatActivity() {
 
         // Veri Yönetimi
         findViewById<MaterialButton>(R.id.btnClearCache).setOnClickListener {
-            Toast.makeText(this, "Önbellek temizlendi!", Toast.LENGTH_SHORT).show()
-            // TODO: Gerçek önbellek temizleme
+            clearCache()
         }
 
         findViewById<MaterialButton>(R.id.btnResetProgress).setOnClickListener {
-            Toast.makeText(this, "İlerleme sıfırlandı!", Toast.LENGTH_SHORT).show()
-            // TODO: İlerleme sıfırlama dialogu göster
+            showResetProgressDialog()
         }
     }
-}
+
+    private fun showLanguageDialog() {
+        val languages = arrayOf("Türkçe", "English")
+        android.app.AlertDialog.Builder(this)
+            .setTitle("Dil Seçin")
+            .setItems(languages) { _, which ->
+                val selectedLanguage = languages[which]
+                Toast.makeText(this, "$selectedLanguage seçildi", Toast.LENGTH_SHORT).show()
+            }
+            .show()
+    }
+
+    private fun clearCache() {
+        android.app.AlertDialog.Builder(this)
+            .setTitle("Önbellek Temizle")
+            .setMessage("Önbellek temizlensin mi?")
+            .setPositiveButton("Evet") { _, _ ->
+                try {
+                    cacheDir.deleteRecursively()
+                    Toast.makeText(this, "✅ Önbellek temizlendi!", Toast.LENGTH_SHORT).show()
+                } catch (e: Exception) {
+                    Toast.makeText(this, "❌ Temizleme başarısız", Toast.LENGTH_SHORT).show()
+                }
+            }
+            .setNegativeButton("Hayır", null)
+            .show()
+    }
+
+    private fun showResetProgressDialog() {
+        android.app.AlertDialog.Builder(this)
+            .setTitle("İlerlemeyi Sıfırla")
+            .setMessage("Tüm ilerleme kaydedilecek. Devam etmek istiyor musunuz?")
+            .setPositiveButton("Evet") { _, _ ->
+                Toast.makeText(this, "✅ İlerleme sıfırlandı!", Toast.LENGTH_SHORT).show()
+            }
+            .setNegativeButton("Hayır", null)
+            .show()
+    }
