@@ -3,7 +3,7 @@
     <!-- Include shared preferences -->
     <include domain="sharedpref" path="."/>
     
-    <!-- Include database -->
+    <!-- Include database files -->
     <include domain="database" path="."/>
     
     <!-- Include files in internal storage -->
@@ -14,4 +14,16 @@
     
     <!-- Exclude no_backup directory -->
     <exclude domain="file" path="no_backup"/>
+    
+    <!-- Include specific shared preference files -->
+    <include domain="sharedpref" path="user_preferences.xml"/>
+    <include domain="sharedpref" path="game_progress.xml"/>
+    <include domain="sharedpref" path="settings.xml"/>
+    
+    <!-- Include specific database files -->
+    <include domain="database" path="mete_database.db"/>
+    
+    <!-- Include specific files -->
+    <include domain="file" path="user_profile.json"/>
+    <include domain="file" path="achievements.json"/>
 </full-backup-content>

@@ -1,49 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Light theme colors -->
-    <color name="primary_color">#4FC3F7</color>
-    <color name="secondary_color">#FFB74D</color>
-    <color name="accent_color">#FF4081</color>
-    <color name="success_color">#4CAF50</color>
-    <color name="warning_color">#FF9800</color>
-    <color name="error_color">#F44336</color>
-    <color name="info_color">#2196F3</color>
+    <!-- Primary Colors -->
+    <color name="primary_blue">#4FC3F7</color>
+    <color name="primary_orange">#FFB74D</color>
+    <color name="primary_pink">#FF4081</color>
+    <color name="primary_green">#81C784</color>
+    <color name="primary_purple">#BA68C8</color>
     
+    <!-- Secondary Colors -->
+    <color name="secondary_light_blue">#B3E5FC</color>
+    <color name="secondary_light_orange">#FFE0B2</color>
+    <color name="secondary_light_pink">#F8BBD0</color>
+    
+    <!-- Background Colors -->
     <color name="background_light">#FFFFFF</color>
-    <color name="surface_light">#F5F5F5</color>
-    <color name="on_surface_light">#212121</color>
-    <color name="on_background_light">#212121</color>
-    
-    <!-- Dark theme colors -->
-    <color name="primary_dark">#0288D1</color>
-    <color name="secondary_dark">#F57C00</color>
-    <color name="accent_dark">#E91E63</color>
-    
+    <color name="background_light_gray">#F5F5F5</color>
     <color name="background_dark">#121212</color>
-    <color name="surface_dark">#1E1E1E</color>
-    <color name="on_surface_dark">#FFFFFF</color>
-    <color name="on_background_dark">#FFFFFF</color>
+    <color name="background_dark_gray">#1E1E1E</color>
     
-    <!-- Common colors -->
-    <color name="white">#FFFFFF</color>
-    <color name="black">#000000</color>
+    <!-- Text Colors -->
+    <color name="text_primary_light">#212121</color>
+    <color name="text_secondary_light">#757575</color>
+    <color name="text_primary_dark">#FFFFFF</color>
+    <color name="text_secondary_dark">#BDBDBD</color>
+    
+    <!-- Status Colors -->
+    <color name="success_green">#4CAF50</color>
+    <color name="warning_yellow">#FFC107</color>
+    <color name="error_red">#F44336</color>
+    <color name="info_blue">#2196F3</color>
+    
+    <!-- Transparent Colors -->
     <color name="transparent">#00000000</color>
+    <color name="semi_transparent_white">#80FFFFFF</color>
+    <color name="semi_transparent_black">#80000000</color>
     
-    <!-- Gradient colors -->
+    <!-- Game Specific -->
+    <color name="game_card_back">#FF9800</color>
+    <color name="game_card_front">#FFFFFF</color>
+    <color name="game_button_normal">#4FC3F7</color>
+    <color name="game_button_pressed">#0288D1</color>
+    
+    <!-- Gradient Colors -->
     <color name="gradient_start">#4FC3F7</color>
     <color name="gradient_middle">#FFB74D</color>
     <color name="gradient_end">#FF4081</color>
-    
-    <!-- Text colors -->
-    <color name="text_primary">#212121</color>
-    <color name="text_secondary">#757575</color>
-    <color name="text_disabled">#BDBDBD</color>
-    
-    <!-- Border colors -->
-    <color name="border_light">#E0E0E0</color>
-    <color name="border_dark">#424242</color>
-    
-    <!-- Shadow colors -->
-    <color name="shadow_light">#1A000000</color>
-    <color name="shadow_dark">#1AFFFFFF</color>
 </resources>

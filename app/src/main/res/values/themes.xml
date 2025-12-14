@@ -3,61 +3,99 @@
     <!-- Base application theme. -->
     <style name="Theme.MeteEgitimUygulamasi" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Primary brand color -->
-        <item name="colorPrimary">@color/primary_color</item>
-        <item name="colorPrimaryVariant">@color/primary_dark</item>
-        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimary">@color/primary_blue</item>
+        <item name="colorPrimaryVariant">@color/primary_blue</item>
+        <item name="colorOnPrimary">@color/background_light</item>
         
         <!-- Secondary brand color -->
-        <item name="colorSecondary">@color/secondary_color</item>
-        <item name="colorSecondaryVariant">@color/secondary_dark</item>
-        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorSecondary">@color/primary_orange</item>
+        <item name="colorSecondaryVariant">@color/primary_orange</item>
+        <item name="colorOnSecondary">@color/background_light</item>
         
-        <!-- Status bar -->
+        <!-- Status bar color -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         
         <!-- Customize your theme here -->
         <item name="android:windowBackground">@color/background_light</item>
-        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+        <item name="android:textColor">@color/text_primary_light</item>
+        <item name="android:textColorSecondary">@color/text_secondary_light</item>
         
-        <!-- Typography -->
-        <!-- TODO: Add kids_font to res/font/ directory -->
-        <!-- <item name="android:fontFamily">@font/kids_font</item> -->
-        
-        <!-- Button styles -->
-        <item name="materialButtonStyle">@style/Widget.MeteEgitimUygulamasi.Button</item>
-        
-        <!-- Card styles -->
-        <item name="materialCardViewStyle">@style/Widget.MeteEgitimUygulamasi.CardView</item>
+        <!-- Material 3 specific -->
+        <item name="materialThemeOverlay">@style/ThemeOverlay.MeteEgitimUygulamasi</item>
+        <item name="android:forceDarkAllowed">false</item>
     </style>
-
+    
     <!-- Splash screen theme -->
     <style name="Theme.MeteEgitimUygulamasi.Splash" parent="Theme.SplashScreen">
-        <item name="windowSplashScreenBackground">@color/primary_color</item>
+        <item name="windowSplashScreenBackground">@color/primary_blue</item>
         <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
         <item name="windowSplashScreenAnimationDuration">1000</item>
         <item name="postSplashScreenTheme">@style/Theme.MeteEgitimUygulamasi</item>
     </style>
-
-    <!-- Button style -->
+    
+    <!-- Theme overlay for Material 3 -->
+    <style name="ThemeOverlay.MeteEgitimUygulamasi" parent="">
+        <item name="colorSurface">@color/background_light</item>
+        <item name="colorSurfaceVariant">@color/background_light_gray</item>
+        <item name="colorOnSurface">@color/text_primary_light</item>
+        <item name="colorOnSurfaceVariant">@color/text_secondary_light</item>
+        
+        <!-- Button styles -->
+        <item name="materialButtonStyle">@style/Widget.MeteEgitimUygulamasi.Button</item>
+        <item name="materialButtonOutlinedStyle">@style/Widget.MeteEgitimUygulamasi.Button.Outlined</item>
+    </style>
+    
+    <!-- Custom Button Styles -->
     <style name="Widget.MeteEgitimUygulamasi.Button" parent="Widget.Material3.Button">
         <item name="android:minHeight">56dp</item>
         <item name="android:paddingHorizontal">24dp</item>
         <item name="cornerRadius">28dp</item>
         <item name="android:textSize">18sp</item>
-        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/kids_font</item>
     </style>
-
-    <!-- CardView style -->
-    <style name="Widget.MeteEgitimUygulamasi.CardView" parent="Widget.Material3.CardView">
+    
+    <style name="Widget.MeteEgitimUygulamasi.Button.Outlined" parent="Widget.Material3.Button.Outlined">
+        <item name="android:minHeight">56dp</item>
+        <item name="android:paddingHorizontal">24dp</item>
+        <item name="cornerRadius">28dp</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@font/kids_font</item>
+    </style>
+    
+    <!-- Card Style -->
+    <style name="Widget.MeteEgitimUygulamasi.Card" parent="Widget.Material3.CardView">
         <item name="cardCornerRadius">16dp</item>
         <item name="cardElevation">4dp</item>
-        <item name="android:layout_margin">8dp</item>
+        <item name="cardUseCompatPadding">true</item>
     </style>
-
-    <!-- Custom dialog theme -->
-    <style name="Theme.MeteEgitimUygulamasi.Dialog" parent="Theme.Material3.DayNight.Dialog">
-        <item name="android:windowBackground">@drawable/dialog_background</item>
-        <item name="android:windowMinWidthMajor">90%</item>
-        <item name="android:windowMinWidthMinor">90%</item>
+    
+    <!-- Text Styles -->
+    <style name="TextAppearance.MeteEgitimUygulamasi.Title" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:textSize">28sp</item>
+        <item name="android:fontFamily">@font/kids_font_bold</item>
+        <item name="android:textColor">@color/primary_blue</item>
+    </style>
+    
+    <style name="TextAppearance.MeteEgitimUygulamasi.Subtitle" parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">@font/kids_font</item>
+        <item name="android:textColor">@color/text_secondary_light</item>
+    </style>
+    
+    <style name="TextAppearance.MeteEgitimUygulamasi.Body" parent="TextAppearance.Material3.BodyLarge">
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/kids_font</item>
+        <item name="android:textColor">@color/text_primary_light</item>
+    </style>
+    
+    <!-- Dark theme variant -->
+    <style name="Theme.MeteEgitimUygulamasi.Dark" parent="Theme.MeteEgitimUygulamasi">
+        <item name="android:windowBackground">@color/background_dark</item>
+        <item name="android:textColor">@color/text_primary_dark</item>
+        <item name="android:textColorSecondary">@color/text_secondary_dark</item>
+        <item name="colorSurface">@color/background_dark</item>
+        <item name="colorSurfaceVariant">@color/background_dark_gray</item>
+        <item name="colorOnSurface">@color/text_primary_dark</item>
+        <item name="colorOnSurfaceVariant">@color/text_secondary_dark</item>
     </style>
 </resources>
