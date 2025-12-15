@@ -23,7 +23,7 @@ Bu rapor, projedeki tüm çakışmaları (conflicts) tespit etmek ve çözmek i�
   - `app/src/main/res/values/attrs.xml`
   - `app/src/main/res/values-night/colors.xml`
 
-**Not:** `values/colors.xml` ve `values-night/colors.xml` arasındaki duplicate'lar normaldir (light/dark theme için).
+**Not:** `values/colors.xml` ve `values-night/colors.xml` arasındaki duplicate'ler normaldir (light/dark theme için).
 
 ### 3. Duplicate Layout Dosyaları
 - ⚠️ **Sonuç:** Duplicate layout dosyaları tespit edildi ve temizlendi
@@ -66,8 +66,8 @@ rm app/src/main/res/layout/activity_games_new.xml
 ## Öneriler
 
 1. **Kod İnceleme:** Gelecekte dosya eklerken/silerken code review sürecinde dikkat edilmeli
-2. **Naming Convention:** Geçici dosyalar için `_temp`, `_backup` gibi açık isimler kullanılmalı
-3. **Version Control:** Farklı versiyonlar için git branch kullanılmalı, layout dosyası çoğaltmak yerine
+2. **Naming Convention:** Geçici dosyalar için `_temp`, `_backup` gibi açık isimler kullanılmalı ve bunlar `.gitignore`'a eklenmeli
+3. **Version Control:** Farklı versiyonlar için düzgün Git workflow kullanılmalı (feature branches, pull requests). Aynı dizinde duplicate dosya oluşturmak yerine, değişiklikler ayrı branch'lerde yönetilmeli ve PR süreci ile merge edilmeli
 
 ## Test Edilmesi Gerekenler
 
