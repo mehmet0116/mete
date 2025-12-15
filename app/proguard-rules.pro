@@ -1,150 +1,235 @@
-# Add project specific ProGuard rules here.
-# You can control the set of applied configuration files using the
-# proguardFiles setting in build.gradle.
+# ProGuard rules for Mete Eğitim Uygulaması
 
-# For more details, see
-#   http://developer.android.com/guide/developing/tools/proguard.html
+# Basic optimization
+-optimizationpasses 5
+-dontusemixedcaseclassnames
+-dontskipnonpubliclibraryclasses
+-dontskipnonpubliclibraryclassmembers
+-dontpreverify
+-verbose
+-optimizations !code/simplification/arithmetic,!field/*,!class/merging/*
 
-# If your project uses WebView with JS, uncomment the following
-# and specify the fully qualified class name to the JavaScript interface
-# class:
-#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
-#   public *;
-#}
+# Keep - Application. Keep all application classes
+-keep public class * extends android.app.Application
+-keep public class * extends android.app.Service
+-keep public class * extends android.content.BroadcastReceiver
+-keep public class * extends android.content.ContentProvider
+-keep public class * extends android.app.backup.BackupAgentHelper
+-keep public class * extends android.preference.Preference
 
-# Uncomment this to preserve the line number information for
-# debugging stack traces.
-#-keepattributes SourceFile,LineNumberTable
-
-# If you keep the line number information, uncomment this to
-# hide the original source file name.
-#-renamesourcefileattribute SourceFile
-
-# Room
--keep class * extends androidx.room.RoomDatabase
--keep class * extends androidx.room.Entity
-
-# Hilt
--keep class * extends dagger.hilt.android.internal.AndroidInjector { *; }
--keep class * extends dagger.hilt.android.internal.AndroidInjector.Factory { *; }
--keep class * extends dagger.hilt.android.internal.GeneratedComponentManager { *; }
-
-# Gson
--keep class com.google.gson.** { *; }
--keep class sun.misc.Unsafe { *; }
--keep class com.google.gson.stream.** { *; }
-
-# Coroutines
--keep class kotlinx.coroutines.** { *; }
-
-# Timber
--dontwarn timber.log.Timber
-
-# Lottie
--keep class com.airbnb.lottie.** { *; }
-
-# Coil
--keep class coil.** { *; }
--keep class coil3.** { *; }
-
-# Navigation Component
--keep class androidx.navigation.** { *; }
-
-# DataStore
--keep class androidx.datastore.** { *; }
-
-# WorkManager
--keep class androidx.work.** { *; }
-
-# Paging
--keep class androidx.paging.** { *; }
-
-# Compose
--keep class androidx.compose.** { *; }
-
-# Remove logging in release builds
--assumenosideeffects class android.util.Log {
-    public static boolean isLoggable(java.lang.String, int);
-    public static int v(...);
-    public static int i(...);
-    public static int w(...);
-    public static int d(...);
-    public static int e(...);
+# Keep - Views
+-keep public class * extends android.view.View {
+    public <init>(android.content.Context);
+    public <init>(android.content.Context, android.util.AttributeSet);
+    public <init>(android.content.Context, android.util.AttributeSet, int);
+    public void set*(...);
+}
+-keepclasseswithmembers class * {
+    public <init>(android.content.Context, android.util.AttributeSet);
+}
+-keepclasseswithmembers class * {
+    public <init>(android.content.Context, android.util.AttributeSet, int);
 }
 
-# Keep - Applications. Keep all application classes, as they are accessed dynamically.
--keep public class * extends android.app.Application
+# Keep - Activities
+-keep class * extends android.app.Activity {
+    public void *(android.view.View);
+}
 
-# Keep - Activities. Keep all activities.
--keep public class * extends android.app.Activity
+# Keep - Enums
+-keepclassmembers enum * {
+    public static **[] values();
+    public static ** valueOf(java.lang.String);
+}
 
-# Keep - Fragments. Keep all fragments.
--keep public class * extends androidx.fragment.app.Fragment
+# Keep - Parcelable
+-keep class * implements android.os.Parcelable {
+    public static final android.os.Parcelable$Creator *;
+}
 
-# Keep - ViewModels. Keep all ViewModels.
--keep public class * extends androidx.lifecycle.ViewModel
-
-# Keep - Services. Keep all services.
--keep public class * extends android.app.Service
-
-# Keep - Broadcast receivers. Keep all broadcast receivers.
--keep public class * extends android.content.BroadcastReceiver
-
-# Keep - Content providers. Keep all content providers.
--keep public class * extends android.content.ContentProvider
-
-# Keep - Views. Keep all custom views.
--keep public class * extends android.view.View
-
-# Keep - Adapters. Keep all adapters.
--keep public class * extends androidx.recyclerview.widget.RecyclerView.Adapter
-
-# Keep - ViewHolders. Keep all ViewHolders.
--keep public class * extends androidx.recyclerview.widget.RecyclerView.ViewHolder
-
-# Serializable classes
--keepnames class * implements java.io.Serializable
+# Keep - Serializable
 -keepclassmembers class * implements java.io.Serializable {
     static final long serialVersionUID;
     private static final java.io.ObjectStreamField[] serialPersistentFields;
-    !static !transient <fields>;
     private void writeObject(java.io.ObjectOutputStream);
     private void readObject(java.io.ObjectInputStream);
     java.lang.Object writeReplace();
     java.lang.Object readResolve();
 }
 
-# Parcelable classes
--keep class * implements android.os.Parcelable {
-  public static final android.os.Parcelable$Creator *;
-}
-
-# Keep - Native methods. Keep all native method names and the names of their classes.
+# Keep - Native methods
 -keepclasseswithmembernames class * {
     native <methods>;
 }
 
-# Keep - Enum classes. Keep the special static methods that are required in enumeration classes.
--keepclassmembers enum * {
-    public static **[] values();
-    public static ** valueOf(java.lang.String);
+# Keep - Custom views
+-keepclassmembers class * extends android.view.View {
+   void set*(***);
+   *** get*();
 }
 
-# Keep - R classes. Keep your R classes.
--keep class **.R
--keep class **.R$* {
-    <fields>;
+# Keep - Getters and setters in custom classes
+-keepclassmembers class * {
+    void set*(***);
+    *** get*();
 }
 
-# Keep - BuildConfig class.
+# Keep - Hilt
+-keep class * extends dagger.hilt.android.internal.managers.ViewComponentManager { *; }
+-keep class * extends dagger.hilt.android.internal.managers.ActivityComponentManager { *; }
+-keep class * extends dagger.hilt.android.internal.managers.FragmentComponentManager { *; }
+-keep class * extends dagger.hilt.android.internal.managers.ServiceComponentManager { *; }
+-keep class * extends dagger.hilt.android.internal.managers.ViewWithFragmentComponentManager { *; }
+-keep class * extends dagger.hilt.android.internal.lifecycle.DefaultViewModelFactories { *; }
+-keep class * extends dagger.hilt.android.internal.lifecycle.HiltViewModelFactory { *; }
+-keep class * extends dagger.hilt.android.internal.lifecycle.HiltViewModelFactory$ActivityCreator { *; }
+-keep class * extends dagger.hilt.android.internal.lifecycle.HiltViewModelFactory$FragmentCreator { *; }
+-keep class * extends dagger.hilt.android.internal.lifecycle.HiltViewModelFactory$ViewModelModule { *; }
+-keep class * extends dagger.hilt.android.internal.lifecycle.HiltViewModelFactory$ViewModelModule$1 { *; }
+-keep class * extends dagger.hilt.android.internal.lifecycle.HiltViewModelFactory$ViewModelModule$2 { *; }
+-keep class * extends dagger.hilt.android.internal.lifecycle.HiltViewModelFactory$ViewModelModule$3 { *; }
+-keep class * extends dagger.hilt.android.internal.lifecycle.HiltViewModelFactory$ViewModelModule$4 { *; }
+-keep class * extends dagger.hilt.android.internal.lifecycle.HiltViewModelFactory$ViewModelModule$5 { *; }
+-keep class * extends dagger.hilt.android.internal.lifecycle.HiltViewModelFactory$ViewModelModule$6 { *; }
+-keep class * extends dagger.hilt.android.internal.lifecycle.HiltViewModelFactory$ViewModelModule$7 { *; }
+-keep class * extends dagger.hilt.android.internal.lifecycle.HiltViewModelFactory$ViewModelModule$8 { *; }
+-keep class * extends dagger.hilt.android.internal.lifecycle.HiltViewModelFactory$ViewModelModule$9 { *; }
+-keep class * extends dagger.hilt.android.internal.lifecycle.HiltViewModelFactory$ViewModelModule$10 { *; }
+
+# Keep - Room
+-keep class * extends androidx.room.RoomDatabase
+-keep class * extends androidx.room.Entity
+-keepclassmembers class * {
+    @androidx.room.* *;
+}
+
+# Keep - DataBinding
+-keep class androidx.databinding.** { *; }
+-keep class * extends androidx.databinding.DataBinderMapper {
+    *;
+}
+
+# Keep - Navigation
+-keep class * extends androidx.navigation.NavController { *; }
+-keep class * extends androidx.navigation.fragment.NavHostFragment { *; }
+
+# Keep - Compose
+-keep class androidx.compose.runtime.Composable { *; }
+-keep class androidx.compose.ui.platform.ComposeView { *; }
+
+# Keep - Lottie
+-keep class com.airbnb.lottie.** { *; }
+
+# Keep - Timber
+-keep class timber.log.Timber { *; }
+
+# Keep - Gson
+-keep class sun.misc.Unsafe { *; }
+-keep class com.google.gson.stream.** { *; }
+-keep class com.google.gson.examples.android.model.** { *; }
+-keep class * implements com.google.gson.TypeAdapterFactory
+-keep class * implements com.google.gson.JsonSerializer
+-keep class * implements com.google.gson.JsonDeserializer
+
+# Remove logging in release
+-assumenosideeffects class android.util.Log {
+    public static *** d(...);
+    public static *** v(...);
+    public static *** i(...);
+    public static *** w(...);
+    public static *** e(...);
+}
+
+# OkHttp
+-keepattributes Signature
+-keepattributes *Annotation*
+-keep class okhttp3.** { *; }
+-keep interface okhttp3.** { *; }
+-dontwarn okhttp3.**
+
+# Retrofit
+-dontwarn retrofit2.**
+-keep class retrofit2.** { *; }
+-keepattributes Signature
+-keepattributes Exceptions
+
+# Coroutines
+-keep class kotlinx.coroutines.** { *; }
+-dontwarn kotlinx.coroutines.**
+
+# Kotlin
+-keep class kotlin.** { *; }
+-dontwarn kotlin.**
+-keep class kotlin.Metadata { *; }
+-dontwarn kotlin.Metadata
+
+# AndroidX
+-keep class androidx.** { *; }
+-dontwarn androidx.**
+
+# Google
+-keep class com.google.** { *; }
+-dontwarn com.google.**
+
+# Support library
+-keep class android.support.** { *; }
+-dontwarn android.support.**
+
+# Multidex
+-keep class androidx.multidex.** { *; }
+
+# WorkManager
+-keep class androidx.work.** { *; }
+
+# DataStore
+-keep class androidx.datastore.** { *; }
+
+# Coil
+-keep class coil.** { *; }
+-dontwarn coil.**
+
+# Application specific - keep all classes in your package
+-keep class com.metegelistirme.** { *; }
+-keep interface com.metegelistirme.** { *; }
+-keep enum com.metegelistirme.** { *; }
+
+# Models
+-keep class com.metegelistirme.models.** { *; }
+
+# Activities
+-keep class com.metegelistirme.activities.** { *; }
+
+# Fragments
+-keep class com.metegelistirme.fragments.** { *; }
+
+# ViewModels
+-keep class com.metegelistirme.viewmodels.** { *; }
+
+# Repositories
+-keep class com.metegelistirme.repositories.** { *; }
+
+# Database
+-keep class com.metegelistirme.database.** { *; }
+
+# Utils
+-keep class com.metegelistirme.utils.** { *; }
+
+# Services
+-keep class com.metegelistirme.services.** { *; }
+
+# Adapters
+-keep class com.metegelistirme.adapters.** { *; }
+
+# Keep - Resource classes
+-keepclassmembers class **.R$* {
+    public static <fields>;
+}
+
+# Keep - BuildConfig
 -keep class **.BuildConfig { *; }
 
-# Remove debug information
--keepattributes Exceptions, InnerClasses, Signature, Deprecated,
-                SourceFile, LineNumberTable, *Annotation*, EnclosingMethod
-
-# Optimization configuration
--optimizations !code/simplification/arithmetic,!code/simplification/cast,!field/*,!class/merging/*
--optimizationpasses 5
+# Optimization for release builds
+-optimizations !code/simplification/cast,!field/*,!class/merging/*
+-optimizationpasses 3
 -allowaccessmodification
--dontpreverify
+-mergeinterfacesaggressively

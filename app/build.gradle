@@ -4,6 +4,7 @@ plugins {
     id 'kotlin-kapt'
     id 'kotlin-parcelize'
     id 'com.google.dagger.hilt.android'
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
 }
 
 android {
@@ -13,11 +14,12 @@ android {
     defaultConfig {
         applicationId "com.metegelistirme"
         minSdk 26
-        targetSdk 33
+        targetSdk 34
         versionCode 1
         versionName "1.0.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunnerArguments clearPackageData: 'true'
         vectorDrawables {
             useSupportLibrary true
         }
@@ -35,6 +37,10 @@ android {
                 ]
             }
         }
+        
+        // BuildConfig fields
+        buildConfigField "String", "BUILD_TIME", "\"${new Date().format('yyyy-MM-dd HH:mm:ss')}\""
+        buildConfigField "boolean", "IS_DEBUG", "${gradle.startParameter.taskNames.any { it.contains('debug') }}"
     }
 
     buildTypes {
@@ -42,12 +48,24 @@ android {
             minifyEnabled false
             debuggable true
             versionNameSuffix "-DEBUG"
+            applicationIdSuffix ".debug"
+            signingConfig signingConfigs.debug
+            
+            // Debug build optimization
+            splits.abi.enable = false
+            splits.density.enable = false
+            aaptOptions.cruncherEnabled = false
         }
         release {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.debug
+            
+            // Release build optimization
+            ndk {
+                debugSymbolLevel 'SYMBOL_TABLE'
+            }
         }
     }
 
@@ -75,7 +93,9 @@ android {
         jvmTarget = '17'
         freeCompilerArgs += [
                 '-opt-in=kotlin.RequiresOptIn',
-                '-Xjvm-default=all'
+                '-Xjvm-default=all',
+                '-Xstring-concat=inline',
+                '-Xcontext-receivers'
         ]
     }
 
@@ -99,13 +119,40 @@ android {
                     'META-INF/LICENSE',
                     'META-INF/LICENSE.txt',
                     'META-INF/NOTICE',
-                    'META-INF/NOTICE.txt'
+                    'META-INF/NOTICE.txt',
+                    '**/kotlin/**',
+                    '**/*.kotlin_module'
             ]
             pickFirsts += [
                     '**/libjsc.so',
                     '**/libc++_shared.so'
             ]
         }
+    }
+    
+    // Build optimization
+    buildCache {
+        local {
+            enabled = true
+            directory = file("${rootProject.projectDir}/build-cache")
+        }
+    }
+    
+    // Test options
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+            returnDefaultValues = true
+        }
+        animationsDisabled = true
+    }
+    
+    // Lint options
+    lint {
+        abortOnError = true
+        checkAllWarnings = true
+        warningsAsErrors = true
+        baseline = file("lint-baseline.xml")
     }
 }
 
@@ -115,6 +162,8 @@ kapt {
     javacOptions {
         option("-source", "17")
         option("-target", "17")
+        option("-Xlint:unchecked")
+        option("-Xlint:deprecation")
     }
 }
 
@@ -134,6 +183,7 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.7.0'
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.7.0'
     implementation 'androidx.lifecycle:lifecycle-common-java8:2.7.0'
+    implementation 'androidx.lifecycle:lifecycle-process:2.7.0'
     implementation 'androidx.activity:activity-ktx:1.8.1'
     implementation 'androidx.fragment:fragment-ktx:1.6.2'
 
@@ -156,11 +206,14 @@ dependencies {
     // Coroutines (optimized)
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.7.3'
 
     // Hilt for Dependency Injection
     implementation "com.google.dagger:hilt-android:2.48"
     kapt "com.google.dagger:hilt-compiler:2.48"
     implementation 'androidx.hilt:hilt-navigation-compose:1.1.0'
+    implementation 'androidx.hilt:hilt-work:1.1.0'
+    kapt 'androidx.hilt:hilt-compiler:1.1.0'
 
     // Navigation Component
     implementation "androidx.navigation:navigation-fragment-ktx:2.7.5"
@@ -176,6 +229,7 @@ dependencies {
     implementation 'androidx.activity:activity-compose:1.8.1'
     implementation "androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0"
     implementation "androidx.navigation:navigation-compose:2.7.5"
+    implementation "androidx.compose.runtime:runtime-livedata"
 
     // Paging 3
     implementation "androidx.paging:paging-runtime-ktx:3.2.1"
@@ -191,23 +245,61 @@ dependencies {
     // Timber for Logging
     implementation 'com.jakewharton.timber:timber:5.0.1'
 
+    // Performance monitoring
+    implementation 'androidx.metrics:metrics-performance:1.0.0-alpha04'
+
     // LeakCanary for memory leak detection (debug only)
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.12'
+    
+    // Chucker for network debugging (debug only)
+    debugImplementation "com.github.chuckerteam.chucker:library:4.0.0"
+    releaseImplementation "com.github.chuckerteam.chucker:library-no-op:4.0.0"
 
     // Testing
     testImplementation 'junit:junit:4.13.2'
     testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3'
     testImplementation 'androidx.arch.core:core-testing:2.2.0'
     testImplementation 'io.mockk:mockk:1.13.8'
+    testImplementation 'app.cash.turbine:turbine:1.0.0'
+    testImplementation 'com.google.truth:truth:1.1.5'
 
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    androidTestImplementation 'androidx.test:runner:1.5.2'
+    androidTestImplementation 'androidx.test:rules:1.5.0'
     androidTestImplementation platform('androidx.compose:compose-bom:2023.10.01')
     androidTestImplementation 'androidx.compose.ui:ui-test-junit4'
+    androidTestImplementation 'io.mockk:mockk-android:1.13.8'
 
     debugImplementation 'androidx.compose.ui:ui-tooling'
     debugImplementation 'androidx.compose.ui:ui-test-manifest'
 
     // MultiDex
     implementation 'androidx.multidex:multidex:2.0.1'
+}
+
+// Build optimization
+tasks.withType(JavaCompile).configureEach {
+    options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
+    options.encoding = "UTF-8"
+}
+
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
+    kotlinOptions {
+        jvmTarget = "17"
+        freeCompilerArgs += [
+            "-opt-in=kotlin.RequiresOptIn",
+            "-Xjvm-default=all",
+            "-Xstring-concat=inline"
+        ]
+    }
+}
+
+// Test optimization
+tasks.withType(Test).configureEach {
+    maxParallelForks = Runtime.runtime.availableProcessors().intdiv(2) ?: 1
+    maxHeapSize = "2048m"
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
 }
