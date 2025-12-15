@@ -1,29 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<data-extraction-rules>
+<data-extraction-rules xmlns:android="http://schemas.android.com/apk/res/android">
     <cloud-backup>
-        <!-- Include shared preferences for backup -->
-        <include domain="sharedpref" path="user_preferences.xml"/>
-        <include domain="sharedpref" path="game_progress.xml"/>
+        <!-- Room veritabanı hariç tut -->
+        <exclude domain="database" path="mete_education_database"/>
         
-        <!-- Include database for backup -->
-        <include domain="database" path="mete_database.db"/>
+        <!-- SharedPreferences hariç tut -->
+        <exclude domain="sharedpref" path="."/>
         
-        <!-- Exclude cache and temporary files -->
-        <exclude domain="file" path="cache"/>
-        <exclude domain="file" path="tmp"/>
-        <exclude domain="file" path="no_backup"/>
+        <!-- Cache dosyaları hariç tut -->
+        <exclude domain="cache" path="."/>
         
-        <!-- Exclude large media files -->
-        <exclude domain="file" path="media/" />
-        <exclude domain="file" path="videos/" />
+        <!-- Code cache hariç tut -->
+        <exclude domain="codecache" path="."/>
+        
+        <!-- External files hariç tut -->
+        <exclude domain="external" path="."/>
+        
+        <!-- Root dizin hariç tut -->
+        <exclude domain="root" path="."/>
+        
+        <!-- File dosyaları hariç tut -->
+        <exclude domain="file" path="."/>
     </cloud-backup>
     
     <device-transfer>
-        <!-- Include everything for device transfer except cache -->
+        <!-- Tüm verileri transfer et -->
+        <include domain="database" path="backup.db"/>
         <include domain="sharedpref" path="."/>
-        <include domain="database" path="."/>
-        <include domain="file" path="."/>
-        <exclude domain="file" path="cache"/>
-        <exclude domain="file" path="no_backup"/>
+        <include domain="file" path="user_data/"/>
+        <include domain="external" path="user_documents/"/>
     </device-transfer>
 </data-extraction-rules>

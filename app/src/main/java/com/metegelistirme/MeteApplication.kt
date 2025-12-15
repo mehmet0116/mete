@@ -2,12 +2,19 @@ package com.metegelistirme
 
 import android.app.Application
 import android.content.Context
-import androidx.datastore.preferences.core.Preferences
-import androidx.datastore.preferences.preferencesDataStore
+import androidx.datastore.preferences.core.PreferenceDataStoreFactory
+import androidx.datastore.preferences.preferencesDataStoreFile
+import androidx.room.Room
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException
 import com.google.android.gms.common.GooglePlayServicesRepairableException
 import com.google.android.gms.security.ProviderInstaller
+import com.metegelistirme.database.AppDatabase
+import com.metegelistirme.utils.AppPreferences
 import dagger.hilt.android.HiltAndroidApp
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.launch
 import timber.log.Timber
 import java.security.KeyManagementException
 import java.security.NoSuchAlgorithmException
@@ -17,82 +24,102 @@ import javax.net.ssl.SSLContext
 class MeteApplication : Application() {
     
     companion object {
-        // DataStore instance
-        private val Context.dataStore by preferencesDataStore(name = "mete_preferences")
-        
-        // Get DataStore instance
-        fun getDataStore(context: Context) = context.dataStore
+        lateinit var instance: MeteApplication
+            private set
+    }
+    
+    private val applicationScope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
+    
+    // Lazy initialization for database
+    val database: AppDatabase by lazy {
+        Room.databaseBuilder(
+            applicationContext,
+            AppDatabase::class.java,
+            "mete_education_database"
+        )
+        .addCallback(object : RoomDatabase.Callback() {
+            override fun onCreate(db: SupportSQLiteDatabase) {
+                super.onCreate(db)
+                applicationScope.launch {
+                    // Pre-populate database if needed
+                }
+            }
+        })
+        .setQueryExecutor { command -> 
+            applicationScope.launch { command.run() }
+        }
+        .setTransactionExecutor { command ->
+            applicationScope.launch { command.run() }
+        }
+        .enableMultiInstanceInvalidation()
+        .fallbackToDestructiveMigration()
+        .build()
+    }
+    
+    // Lazy initialization for DataStore
+    val dataStore by lazy {
+        PreferenceDataStoreFactory.create(
+            scope = applicationScope,
+            produceFile = { applicationContext.preferencesDataStoreFile("settings") }
+        )
     }
     
     override fun onCreate() {
         super.onCreate()
+        instance = this
         
-        // Initialize Timber for logging (debug builds only)
+        // Initialize Timber for logging
         if (BuildConfig.DEBUG) {
             Timber.plant(Timber.DebugTree())
         }
         
-        // Initialize security provider
-        initializeSecurityProvider()
+        // Initialize app preferences
+        AppPreferences.initialize(this)
         
-        // Initialize app components
-        initializeAppComponents()
+        // Update security provider for better TLS
+        updateAndroidSecurityProvider()
         
-        Timber.d("MeteApplication initialized")
+        // Preload resources in background
+        preloadResources()
+        
+        // Initialize analytics (if any)
+        initializeAnalytics()
     }
     
-    private fun initializeSecurityProvider() {
+    private fun updateAndroidSecurityProvider() {
         try {
-            // Update security provider to protect against SSL vulnerabilities
             ProviderInstaller.installIfNeeded(applicationContext)
             
             val sslContext = SSLContext.getInstance("TLSv1.2")
             sslContext.init(null, null, null)
             sslContext.createSSLEngine()
-            
         } catch (e: GooglePlayServicesRepairableException) {
             Timber.e(e, "Google Play Services not available")
         } catch (e: GooglePlayServicesNotAvailableException) {
             Timber.e(e, "Google Play Services not available")
         } catch (e: NoSuchAlgorithmException) {
-            Timber.e(e, "SSL algorithm not available")
+            Timber.e(e, "No such algorithm")
         } catch (e: KeyManagementException) {
             Timber.e(e, "Key management exception")
         }
     }
     
-    private fun initializeAppComponents() {
-        // Initialize any app-wide components here
-        // For example: WorkManager, Notifications, Analytics, etc.
-        
-        // Set default uncaught exception handler
-        Thread.setDefaultUncaughtExceptionHandler { thread, throwable ->
-            Timber.e(throwable, "Uncaught exception in thread: ${thread.name}")
-            // You could log to Firebase Crashlytics here
+    private fun preloadResources() {
+        applicationScope.launch {
+            // Preload sounds, images, or other resources
+            Timber.d("Preloading resources...")
+            
+            // Example: Preload Lottie animations
+            // Example: Preload common sounds
+            
+            Timber.d("Resources preloaded")
         }
     }
     
-    override fun onLowMemory() {
-        super.onLowMemory()
-        Timber.w("Low memory warning - clearing caches if needed")
-        // Clear image caches, temporary files, etc.
+    private fun initializeAnalytics() {
+        // Initialize analytics services here
+        // Example: Firebase Analytics, Crashlytics, etc.
     }
     
-    override fun onTrimMemory(level: Int) {
-        super.onTrimMemory(level)
-        when (level) {
-            TRIM_MEMORY_COMPLETE -> {
-                Timber.w("TRIM_MEMORY_COMPLETE - app is in background and system is low on memory")
-            }
-            TRIM_MEMORY_MODERATE -> {
-                Timber.w("TRIM_MEMORY_MODERATE - app is in background and system is moderately low on memory")
-            }
-            TRIM_MEMORY_BACKGROUND -> {
-                Timber.w("TRIM_MEMORY_BACKGROUND - app is in background and system is running low on memory")
-            }
-            TRIM_MEMORY_UI_HIDDEN -> {
-                Timber.w("TRIM_MEMORY_UI_HIDDEN - app's UI is no longer visible")
-            }
-        }
-    }
+    fun getAppContext(): Context = applicationContext
 }

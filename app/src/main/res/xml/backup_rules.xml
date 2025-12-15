@@ -1,29 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<full-backup-content>
-    <!-- Include shared preferences -->
-    <include domain="sharedpref" path="."/>
+<full-backup-content xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Room veritabanı hariç tut -->
+    <exclude domain="database" path="mete_education_database"/>
     
-    <!-- Include database files -->
-    <include domain="database" path="."/>
+    <!-- SharedPreferences hariç tut (DataStore kullanılıyor) -->
+    <exclude domain="sharedpref" path="."/>
     
-    <!-- Include files in internal storage -->
-    <include domain="file" path="."/>
+    <!-- Cache dosyaları hariç tut -->
+    <exclude domain="cache" path="."/>
     
-    <!-- Exclude cache directory -->
-    <exclude domain="file" path="cache"/>
+    <!-- Code cache hariç tut -->
+    <exclude domain="codecache" path="."/>
     
-    <!-- Exclude no_backup directory -->
-    <exclude domain="file" path="no_backup"/>
+    <!-- External files hariç tut -->
+    <exclude domain="external" path="."/>
     
-    <!-- Include specific shared preference files -->
-    <include domain="sharedpref" path="user_preferences.xml"/>
-    <include domain="sharedpref" path="game_progress.xml"/>
-    <include domain="sharedpref" path="settings.xml"/>
+    <!-- Root dizin hariç tut -->
+    <exclude domain="root" path="."/>
     
-    <!-- Include specific database files -->
-    <include domain="database" path="mete_database.db"/>
+    <!-- File dosyaları hariç tut -->
+    <exclude domain="file" path="."/>
     
-    <!-- Include specific files -->
-    <include domain="file" path="user_profile.json"/>
-    <include domain="file" path="achievements.json"/>
+    <!-- İzin verilenler -->
+    <include domain="database" path="backup.db" requireFlags="clientSideEncryption"/>
+    
+    <!-- Asset dosyaları yedekle -->
+    <include domain="asset" path="fonts/"/>
+    <include domain="asset" path="sounds/"/>
+    <include domain="asset" path="images/"/>
+    
+    <!-- Raw ses dosyaları yedekle -->
+    <include domain="raw" path="welcome_sounds/"/>
+    <include domain="raw" path="praise_sounds/"/>
+    <include domain="raw" path="motivation_sounds/"/>
+    <include domain="raw" path="question_sounds/"/>
+    <include domain="raw" path="music/"/>
+    <include domain="raw" path="effects/"/>
 </full-backup-content>

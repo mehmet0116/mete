@@ -8,13 +8,13 @@ import java.util.Date
 data class UserProgress(
     @PrimaryKey(autoGenerate = true)
     val id: Long = 0,
-    val childProfileId: Long,
+    val userId: String,
     val moduleId: String,
-    val progress: Int = 0,
-    val completedLessons: Int = 0,
-    val totalLessons: Int = 0,
-    val lastAccessDate: Date = Date(),
+    val activityId: String,
+    val progressPercentage: Int,
+    val starsEarned: Int,
+    val timeSpent: Long, // in milliseconds
+    val completedAt: Date?,
     val createdAt: Date = Date(),
     val updatedAt: Date = Date()
 )
-

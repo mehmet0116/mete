@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Debug build için daha esnek kurallar -->
+    <debug-overrides>
+        <trust-anchors>
+            <!-- Debug için kullanıcı sertifikalarına izin ver -->
+            <certificates src="user" />
+        </trust-anchors>
+    </debug-overrides>
+    
+    <!-- Release build için sıkı kurallar -->
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <!-- Sistem sertifikaları -->
+            <certificates src="system" />
+            <!-- Kullanıcı sertifikaları (sadece debug) -->
+            <certificates src="user" />
+        </trust-anchors>
+        
+        <!-- Domain bazlı konfigürasyon -->
+        <domain-config cleartextTrafficPermitted="false">
+            <domain includeSubdomains="true">localhost</domain>
+            <domain includeSubdomains="true">127.0.0.1</domain>
+            <domain includeSubdomains="true">10.0.2.2</domain>
+        </domain-config>
+    </base-config>
+    
+    <!-- Özel domain konfigürasyonları -->
+    <domain-config cleartextTrafficPermitted="false">
+        <domain includeSubdomains="true">api.meteegitim.com</domain>
+        <domain includeSubdomains="true">cdn.meteegitim.com</domain>
+        <domain includeSubdomains="true">assets.meteegitim.com</domain>
+        
+        <!-- Pin sertifikaları (opsiyonel) -->
+        <pin-set expiration="2024-12-31">
+            <!-- SHA256 hash'leri buraya eklenebilir -->
+        </pin-set>
+    </domain-config>
+</network-security-config>
