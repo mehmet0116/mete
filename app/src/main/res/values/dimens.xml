@@ -13,7 +13,7 @@
     <dimen name="corner_radius_medium">8dp</dimen>
     <dimen name="corner_radius_large">16dp</dimen>
     <dimen name="corner_radius_xlarge">24dp</dimen>
-    <dimen name="corner_radius_circle">999dp</dimen>
+    <dimen name="corner_radius_circle">50dp</dimen>
     
     <!-- Elevation -->
     <dimen name="elevation_low">2dp</dimen>
