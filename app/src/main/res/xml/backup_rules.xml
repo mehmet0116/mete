@@ -1,39 +1,33 @@
-<?xml version="1.0" encoding="utf-8"?>
-<full-backup-content xmlns:android="http://schemas.android.com/apk/res/android">
-    <!-- Room veritabanı hariç tut -->
-    <exclude domain="database" path="mete_education_database"/>
-    
-    <!-- SharedPreferences hariç tut (DataStore kullanılıyor) -->
-    <exclude domain="sharedpref" path="."/>
-    
-    <!-- Cache dosyaları hariç tut -->
-    <exclude domain="cache" path="."/>
-    
-    <!-- Code cache hariç tut -->
-    <exclude domain="codecache" path="."/>
-    
-    <!-- External files hariç tut -->
-    <exclude domain="external" path="."/>
-    
-    <!-- Root dizin hariç tut -->
-    <exclude domain="root" path="."/>
-    
-    <!-- File dosyaları hariç tut -->
-    <exclude domain="file" path="."/>
-    
-    <!-- İzin verilenler -->
-    <include domain="database" path="backup.db" requireFlags="clientSideEncryption"/>
-    
-    <!-- Asset dosyaları yedekle -->
-    <include domain="asset" path="fonts/"/>
-    <include domain="asset" path="sounds/"/>
-    <include domain="asset" path="images/"/>
-    
-    <!-- Raw ses dosyaları yedekle -->
-    <include domain="raw" path="welcome_sounds/"/>
-    <include domain="raw" path="praise_sounds/"/>
-    <include domain="raw" path="motivation_sounds/"/>
-    <include domain="raw" path="question_sounds/"/>
-    <include domain="raw" path="music/"/>
-    <include domain="raw" path="effects/"/>
+<?xml version="1.0" encoding="utf-8"?><!--
+   Sample backup rules file; uncomment and customize as necessary.
+   See https://developer.android.com/guide/topics/data/autobackup
+   for details.
+   Note: This file is ignored for devices older than API 31
+   See https://developer.android.com/about/versions/12/backup-restore
+-->
+<full-backup-content>
+    <!--
+   <include domain="sharedpref" path="."/>
+   <exclude domain="sharedpref" path="device.xml"/>
+-->
+   
+   <!-- Include Room database -->
+   <include domain="database" path="mete_database.db"/>
+   
+   <!-- Include DataStore preferences -->
+   <include domain="file" path="datastore/"/>
+   
+   <!-- Exclude cache files -->
+   <exclude domain="file" path="cache/"/>
+   <exclude domain="external" path="Android/data/com.metegelistirme/cache"/>
+   
+   <!-- Exclude temporary files -->
+   <exclude domain="file" path="tmp/"/>
+   
+   <!-- Include app-specific directories -->
+   <include domain="file" path="user_data/"/>
+   
+   <!-- Exclude sensitive information -->
+   <exclude domain="database" path="sensitive.db"/>
+   <exclude domain="sharedpref" path="sensitive_prefs.xml"/>
 </full-backup-content>

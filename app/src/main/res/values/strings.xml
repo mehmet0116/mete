@@ -4,74 +4,144 @@
     <string name="app_name">Mete Eğitim Uygulaması</string>
     <string name="app_description">5 yaş ve üzeri çocuklar için eğitici oyunlar</string>
     
-    <!-- Splash Screen -->
-    <string name="splash_loading">Yükleniyor...</string>
-    
-    <!-- Main Menu -->
-    <string name="main_menu_title">Mete ile Öğreniyorum</string>
-    <string name="education_module">Eğitim Modülleri</string>
-    <string name="games_module">Oyunlar</string>
-    <string name="settings">Ayarlar</string>
-    <string name="parent_panel">Ebeveyn Paneli</string>
-    
-    <!-- Education Modules -->
-    <string name="language_development">Dil Gelişimi</string>
-    <string name="math_skills">Matematik Becerileri</string>
-    <string name="cognitive_development">Bilişsel Gelişim</string>
-    <string name="creativity">Yaratıcılık</string>
-    <string name="life_skills">Günlük Yaşam Becerileri</string>
-    
-    <!-- Games -->
-    <string name="matching_game">Eşleştirme Oyunu</string>
-    <string name="memory_game">Hafıza Oyunu</string>
-    <string name="puzzle_game">Puzzle</string>
-    <string name="quiz_game">Quiz</string>
-    
-    <!-- Settings -->
-    <string name="sound_settings">Ses Ayarları</string>
-    <string name="background_music">Arka Plan Müziği</string>
-    <string name="sound_effects">Ses Efektleri</string>
-    <string name="voice_guidance">Sesli Rehberlik</string>
-    <string name="dark_mode">Karanlık Mod</string>
-    <string name="language">Dil</string>
-    <string name="turkish">Türkçe</string>
-    <string name="english">İngilizce</string>
-    
-    <!-- Parent Panel -->
-    <string name="progress_tracking">İlerleme Takibi</string>
-    <string name="time_limit">Süre Sınırlaması</string>
-    <string name="daily_report">Günlük Rapor</string>
-    <string name="achievements">Başarılar</string>
-    
     <!-- Common -->
-    <string name="back">Geri</string>
-    <string name="next">İleri</string>
-    <string name="start">Başla</string>
-    <string name="pause">Duraklat</string>
-    <string name="resume">Devam Et</string>
-    <string name="restart">Yeniden Başlat</string>
-    <string name="exit">Çıkış</string>
-    <string name="save">Kaydet</string>
+    <string name="loading">Yükleniyor...</string>
+    <string name="error">Hata oluştu</string>
+    <string name="retry">Tekrar Dene</string>
     <string name="cancel">İptal</string>
     <string name="ok">Tamam</string>
+    <string name="yes">Evet</string>
+    <string name="no">Hayır</string>
+    <string name="next">Sonraki</string>
+    <string name="previous">Önceki</string>
+    <string name="finish">Bitir</string>
+    <string name="skip">Atla</string>
+    
+    <!-- Splash Screen -->
+    <string name="splash_welcome">Mete\'ye Hoş Geldin!</string>
+    
+    <!-- Main Menu -->
+    <string name="menu_education">Eğitim</string>
+    <string name="menu_games">Oyunlar</string>
+    <string name="menu_settings">Ayarlar</string>
+    <string name="menu_parent">Ebeveyn</string>
+    
+    <!-- Education Modules -->
+    <string name="module_language">Dil Gelişimi</string>
+    <string name="module_math">Matematik</string>
+    <string name="module_cognitive">Bilişsel Gelişim</string>
+    <string name="module_creativity">Yaratıcılık</string>
+    <string name="module_life_skills">Yaşam Becerileri</string>
+    
+    <!-- Language Module -->
+    <string name="language_alphabet">Alfabe</string>
+    <string name="language_words">Kelimeler</string>
+    <string name="language_stories">Hikayeler</string>
+    <string name="language_english">İngilizce</string>
+    
+    <!-- Math Module -->
+    <string name="math_counting">Sayı Sayma</string>
+    <string name="math_addition">Toplama</string>
+    <string name="math_subtraction">Çıkarma</string>
+    <string name="math_shapes">Şekiller</string>
+    
+    <!-- Cognitive Module -->
+    <string name="cognitive_memory">Hafıza Oyunu</string>
+    <string name="cognitive_matching">Eşleştirme</string>
+    <string name="cognitive_puzzle">Puzzle</string>
+    <string name="cognitive_find_difference">Farkı Bul</string>
+    
+    <!-- Creativity Module -->
+    <string name="creativity_drawing">Boyama</string>
+    <string name="creativity_music">Müzik</string>
+    <string name="creativity_story">Hikaye Oluştur</string>
+    
+    <!-- Life Skills Module -->
+    <string name="life_colors">Renkler</string>
+    <string name="life_animals">Hayvanlar</string>
+    <string name="life_professions">Meslekler</string>
+    <string name="life_traffic">Trafik</string>
+    
+    <!-- Games -->
+    <string name="game_matching">Eşleştirme Oyunu</string>
+    <string name="game_memory">Hafıza Oyunu</string>
+    <string name="game_puzzle">Puzzle</string>
+    <string name="game_quiz">Quiz</string>
+    
+    <!-- Settings -->
+    <string name="settings_title">Ayarlar</string>
+    <string name="settings_sound">Ses</string>
+    <string name="settings_music">Müzik</string>
+    <string name="settings_vibration">Titreşim</string>
+    <string name="settings_language">Dil</string>
+    <string name="settings_dark_mode">Karanlık Mod</string>
+    <string name="settings_notifications">Bildirimler</string>
+    <string name="settings_about">Hakkında</string>
+    
+    <!-- Parent Panel -->
+    <string name="parent_title">Ebeveyn Paneli</string>
+    <string name="parent_progress">İlerleme</string>
+    <string name="parent_time_limit">Süre Sınırı</string>
+    <string name="parent_reports">Raporlar</string>
+    <string name="parent_achievements">Başarılar</string>
     
     <!-- Feedback Messages -->
-    <string name="correct_answer">Harikasın! Doğru cevap!</string>
-    <string name="try_again">Bir daha deneyelim!</string>
-    <string name="excellent">Mükemmel!</string>
-    <string name="good_job">Aferin!</string>
-    <string name="you_can_do_it">Başarabilirsin!</string>
+    <string name="feedback_correct">Harikasın! Çok akıllısın!</string>
+    <string name="feedback_incorrect">Bir daha deneyelim</string>
+    <string name="feedback_try_again">Tekrar denemek ister misin?</string>
+    <string name="feedback_excellent">Mükemmel!</string>
+    <string name="feedback_good">Çok iyi!</string>
+    <string name="feedback_keep_going">Devam et!</string>
     
-    <!-- Module Specific -->
-    <string name="alphabet_learning">Alfabe Öğreniyorum</string>
-    <string name="counting_numbers">Sayı Sayma</string>
-    <string name="addition">Toplama</string>
-    <string name="subtraction">Çıkarma</string>
-    <string name="shapes">Şekiller</string>
-    <string name="colors">Renkler</string>
-    <string name="animals">Hayvanlar</string>
-    <string name="memory_cards">Hafıza Kartları</string>
-    <string name="find_difference">Farkı Bul</string>
-    <string name="drawing">Çizim</string>
-    <string name="music">Müzik</string>
+    <!-- Numbers -->
+    <string-array name="numbers_one_to_ten">
+        <item>Bir</item>
+        <item>İki</item>
+        <item>Üç</item>
+        <item>Dört</item>
+        <item>Beş</item>
+        <item>Altı</item>
+        <item>Yedi</item>
+        <item>Sekiz</item>
+        <item>Dokuz</item>
+        <item>On</item>
+    </string-array>
+    
+    <!-- Colors -->
+    <string-array name="colors_list">
+        <item>Kırmızı</item>
+        <item>Mavi</item>
+        <item>Yeşil</item>
+        <item>Sarı</item>
+        <item>Turuncu</item>
+        <item>Mor</item>
+        <item>Pembe</item>
+        <item>Kahverengi</item>
+        <item>Siyah</item>
+        <item>Beyaz</item>
+    </string-array>
+    
+    <!-- Shapes -->
+    <string-array name="shapes_list">
+        <item>Daire</item>
+        <item>Kare</item>
+        <item>Üçgen</item>
+        <item>Dikdörtgen</item>
+        <item>Yıldız</item>
+        <item>Kalp</item>
+    </string-array>
+    
+    <!-- Animals -->
+    <string-array name="animals_list">
+        <item>Kedi</item>
+        <item>Köpek</item>
+        <item>Aslan</item>
+        <item>Fil</item>
+        <item>Kuş</item>
+        <item>Balık</item>
+        <item>At</item>
+        <item>İnek</item>
+        <item>Tavşan</item>
+        <item>Kurbağa</item>
+    </string-array>
 </resources>

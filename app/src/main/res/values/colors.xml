@@ -1,64 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Primary Colors -->
-    <color name="primary_blue">#4FC3F7</color>
-    <color name="primary_orange">#FFB74D</color>
-    <color name="primary_pink">#FF4081</color>
-    <color name="primary_green">#81C784</color>
-    <color name="primary_purple">#BA68C8</color>
+    <!-- Light theme colors -->
+    <color name="primary_color">#4FC3F7</color>
+    <color name="primary_dark">#0288D1</color>
+    <color name="secondary_color">#FFB74D</color>
+    <color name="secondary_dark">#F57C00</color>
+    <color name="accent_color">#FF4081</color>
     
-    <!-- Secondary Colors -->
-    <color name="secondary_light_blue">#B3E5FC</color>
-    <color name="secondary_light_orange">#FFE0B2</color>
-    <color name="secondary_light_pink">#F8BBD0</color>
-    
-    <!-- Background Colors -->
+    <!-- Background colors -->
     <color name="background_light">#FFFFFF</color>
-    <color name="background_light_gray">#F5F5F5</color>
     <color name="background_dark">#121212</color>
-    <color name="background_dark_gray">#1E1E1E</color>
     
-    <!-- Text Colors -->
-    <color name="text_primary_light">#212121</color>
-    <color name="text_secondary_light">#757575</color>
-    <color name="text_primary_dark">#FFFFFF</color>
-    <color name="text_secondary_dark">#BDBDBD</color>
+    <!-- Surface colors -->
+    <color name="surface">#FFFFFF</color>
+    <color name="surface_variant">#E1E1E1</color>
+    <color name="on_surface">#1A1A1A</color>
+    <color name="on_surface_variant">#757575</color>
+    <color name="outline">#BDBDBD</color>
     
-    <!-- Status Colors -->
-    <color name="success_green">#4CAF50</color>
-    <color name="warning_yellow">#FFC107</color>
-    <color name="error_red">#F44336</color>
-    <color name="info_blue">#2196F3</color>
+    <!-- Container colors -->
+    <color name="primary_container">#BBDEFB</color>
+    <color name="on_primary_container">#002171</color>
+    <color name="secondary_container">#FFE0B2</color>
+    <color name="on_secondary_container">#311300</color>
     
-    <!-- Transparent Colors -->
-    <color name="transparent">#00000000</color>
-    <color name="semi_transparent_white">#80FFFFFF</color>
-    <color name="semi_transparent_black">#80000000</color>
+    <!-- Text colors -->
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+    <color name="text_disabled">#BDBDBD</color>
     
-    <!-- Game Specific -->
-    <color name="game_card_back">#FF9800</color>
-    <color name="game_card_front">#FFFFFF</color>
-    <color name="game_button_normal">#4FC3F7</color>
-    <color name="game_button_pressed">#0288D1</color>
-    
-    <!-- Gradient Colors -->
-    <color name="gradient_start">#4FC3F7</color>
-    <color name="gradient_middle">#FFB74D</color>
-    <color name="gradient_end">#FF4081</color>
-    
-    <!-- Additional Colors for Compatibility -->
-    <color name="primary_color">@color/primary_blue</color>
-    <color name="primary_dark">@color/primary_blue</color>
-    <color name="secondary_color">@color/primary_orange</color>
-    <color name="accent_color">@color/primary_pink</color>
+    <!-- Common colors -->
     <color name="white">#FFFFFF</color>
-    <color name="gray">#9E9E9E</color>
-    <color name="text_primary">@color/text_primary_light</color>
-    <color name="text_secondary">@color/text_secondary_light</color>
-    <color name="text_light">#FFFFFF</color>
-    <color name="on_surface_light">@color/text_primary_light</color>
-    <color name="warning_color">@color/warning_yellow</color>
-    <color name="warning_orange">@color/warning_yellow</color>
-    <color name="edu_yellow">#FDD835</color>
-    <color name="ic_launcher_background">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="transparent">#00000000</color>
+    
+    <!-- Success/Error colors -->
+    <color name="success_color">#4CAF50</color>
+    <color name="error_color">#F44336</color>
+    <color name="warning_color">#FF9800</color>
+    <color name="info_color">#2196F3</color>
+    
+    <!-- Game specific colors -->
+    <color name="game_correct">#81C784</color>
+    <color name="game_incorrect">#E57373</color>
+    <color name="game_neutral">#90A4AE</color>
 </resources>
